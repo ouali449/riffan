@@ -1,38 +1,183 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Riffan - الملابس الريفية الأصيلة</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RIFFAN.io - République du Rif 1923</title>
 <style>
-body{margin:0;font-family:system-ui;background:#0a0a0a;color:white;text-align:center}
-header{padding:80px 20px;background:linear-gradient(180deg,#1a1a1a,#0a0a0a)}
-h1{font-size:50px;margin:0}
-h1 span{color:#00ff88}
-.btn{display:inline-block;margin-top:30px;padding:18px 35px;background:#00ff88;color:black;border-radius:50px;font-weight:bold;text-decoration:none;font-size:18px}
-.products{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:20px;max-width:600px;margin:auto}
-.card{background:#1a1a1a;border-radius:20px;padding:15px}
-.card img{width:100%;border-radius:15px}
-footer{padding:40px;color:#777}
+*{margin:0;padding:0;box-sizing:border-box}body{background:#060606;color:#fff;font-family:Inter,system-ui,sans-serif}
+.ticker{background:#0a0a0a;border-bottom:1px solid #1a1a1a;display:flex;gap:20px;padding:7px 16px;font-size:11px;overflow:auto;white-space:nowrap;align-items:center}
+.ticker span{display:flex;align-items:center;gap:6px;font-weight:700}
+.ticker .up{color:#00ff88}
+.hdr{background:#0f0f0f;border-bottom:1px solid #222;display:flex;justify-content:space-between;align-items:center;padding:10px 16px;position:sticky;top:0;z-index:100}
+.logo{display:flex;align-items:center;gap:10px}.logo b{color:#d4af37;font-size:20px;letter-spacing:1px}.logo small{display:block;color:#d4af37;font-size:7px;letter-spacing:1.5px}
+.nav{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.nav a{background:#1e1e1e;color:#999;padding:6px 12px;border-radius:20px;font-size:10px;font-weight:700;text-decoration:none}.nav a.active{background:#2a2a2a;color:#fff}.nav .gold{background:linear-gradient(180deg,#e8c766,#c9a227);color:#000;font-weight:800;border:none}
+.main{max-width:1200px;margin:auto;padding:16px}
+.hero{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px}
+.pool{background:#111;border:1px solid #d4af37;border-radius:8px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;font-size:11px;margin-bottom:14px}
+.bar{width:100%;height:6px;background:#222;border-radius:3px;overflow:hidden;margin:6px 0}.fill{height:100%;background:linear-gradient(90deg,#d4af37,#00ff88);width:0%;transition:0.5s}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}@media(max-width:800px){.grid{grid-template-columns:1fr}}
+.card{background:#111;border:1px solid #222;border-radius:10px;overflow:hidden;cursor:pointer;transition:0.2s}.card:hover{border-color:#d4af37;transform:translateY(-2px)}.card.hot{border:2px solid #ff3b3b;box-shadow:0 0 15px rgba(255,59,59,0.2)}
+.card img{width:100%;height:150px;object-fit:cover}.body{padding:10px}
+.tag{font-size:8px;padding:3px 6px;border-radius:4px;font-weight:800;display:inline-block;margin-right:4px}.tag-gold{background:#d4af37;color:#000}.tag-blue{background:#00d1ff;color:#000}.tag-red{background:#ff3b3b;color:#fff}.tag-green{background:#00ff88;color:#000}
+.card h3{font-size:13px;margin:8px 0;line-height:1.3}.card p{font-size:11px;color:#888;line-height:1.4}
+.meta{font-size:9px;color:#555;margin-top:8px;display:flex;justify-content:space-between}
+.bottom{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}@media(max-width:800px){.bottom{grid-template-columns:1fr}}
+.box{background:#111;border:1px solid #333;border-radius:10px;padding:12px}
+.read-bar{position:fixed;bottom:0;left:0;right:0;background:#111;border-top:2px solid #00ff88;padding:12px 16px;display:none;justify-content:space-between;align-items:center;z-index:200}
 </style>
 </head>
 <body>
-<header>
-<h1>RIFF<span>AN</span></h1>
-<p>لبسة ريفية بجودة عالية - الأصالة و الأناقة</p>
-<a class="btn" href="https://wa.me/212600000000">اطلب عبر واتساب</a>
-</header>
 
-<div class="products">
-<div class="card"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500"><h3>تيشورت Riffan</h3><p>199 DH</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500"><h3>كاسكيط Rif</h3><p>149 DH</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1601460585043-2325e6e8771b?w=500"><h3>Hoodie أمازيغي</h3><p>349 DH</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500"><h3>جاكيط Riffan</h3><p>499 DH</p></div>
+<div class="ticker">
+<span>🪙 RIFFAN $0.00013 <b class="up">+5.2%</b></span>
+<span>₿ BTC $67,420 <b class="up">+1.4%</b></span>
+<span>♦ ETH $3,850 <b class="up">+2.1%</b></span>
+<span>✕ XRP $0.62 <b style="color:#ff5a5a">-0.8%</b></span>
+<span>◎ SOL $178 <b class="up">+6.3%</b></span>
+<span style="margin-left:auto;color:#00ff88" id="botStat">🤖 BOT: Active (10min)</span>
 </div>
 
-<footer>
-© 2026 Riffan - صنع في الريف بكل فخر<br>
-Instagram: @riffan.ma
-</footer>
+<div class="hdr">
+<div class="logo">
+<div style="width:42px;height:42px;border-radius:50%;background:#000;border:2px solid #d4af37;display:flex;align-items:center;justify-content:center;font-size:20px">🦁</div>
+<div><b>RIFFAN.io</b><small>RÉPUBLIQUE DU RIF • 1923 • READ TO EARN 0.02$</small></div>
+</div>
+<div class="nav">
+<a>MARKETS</a><a class="active">NEWS</a><a>RIF 1923</a><a>ANALYSIS</a><a>LEARN</a><a>PORTFOLIO</a>
+<a class="pts" id="ptsDisplay" style="background:#111;color:#00ff88;border:1px solid #00ff88">0.00$</a>
+<a class="gold" id="walletBtn" onclick="connectWallet()">Connect Wallet</a>
+</div>
+</div>
+
+<div class="main">
+<div class="hero">
+<h1 style="font-size:22px;letter-spacing:1px">LATEST NEWS</h1>
+<div style="font-size:11px;color:#666">Live coverage from the Rif region • Markets • Crypto • Independence • 0.02$ per article</div>
+</div>
+
+<div class="pool">
+<div>
+<div style="font-weight:800">💰 400K POOL • <span style="color:#00ff88">0.02$ = 166 RIFFAN per article</span> • 6 MONTHS PLAN</div>
+<div class="bar"><div class="fill" id="poolFill"></div></div>
+<div style="font-size:10px;color:#888"><span id="poolLeft">400,000 RIFFAN left</span> • <span id="poolPct">0%</span> used • 13 readers/day = 6 months</div>
+</div>
+<div style="text-align:right">
+<div style="font-size:18px;font-weight:800;color:#00ff88" id="eurTotal">0.00$</div>
+<div style="font-size:9px;color:#888">Your earnings</div>
+</div>
+</div>
+
+<div class="grid" id="newsGrid">
+
+<!-- 🔥 الخبر الجديد ديالك هو الأول HOT -->
+<div class="card hot" onclick="readArticle(this,'marhaba40k','https://www.almoujtamaa.ma/salasa-عودة-مغاربة-العالم-من-ميناء-الحسيمة')">
+<img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800">
+<div class="body">
+<span class="tag tag-red">BREAKING • AL HOCEIMA</span><span class="tag tag-green">+0.02$ = 166 RIFFAN</span>
+<h3>سجل عبور 40 ألف مسافر بـ"مرحبا 2026".. مخاوف من توقف خط موتريل–الحسيمة البحري</h3>
+<p>ميناء الحسيمة سجل 40,000+ مسافر فـ مرحبا 2026. خط موتريل-الحسيمة نقل 15,437 مسافر فـ 21 رحلة، لكن حركة موتريل طاحت -13.9% بعد توقف خط طنجة. مخاوف حقيقية من توقف الخط الحيوي للريف.</p>
+<div class="meta"><span>📅 13/09/2026 - 19:14 • MAP</span><span>⏱ 30s = 0.02$</span></div>
+</div>
+</div>
+
+<div class="card" onclick="readArticle(this,'nador22')">
+<img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=600">
+<div class="body">
+<span class="tag tag-gold">NADOR</span><span class="tag tag-green">+0.02$</span>
+<h3>Rif Region Advances Crypto Trade Framework as Nador Port Volume Surges 22%</h3>
+<p>Regional authorities roll out blockchain customs platform to streamline trade settlement and cross-border payments.</p>
+<div class="meta"><span>🕒 1 hour ago</span><span>4 min read • 0.02$</span></div>
+</div>
+</div>
+
+<div class="card" onclick="readArticle(this,'alhouceima')">
+<img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600">
+<div class="body">
+<span class="tag tag-blue">AL HOCEIMA</span><span class="tag tag-green">+0.02$</span>
+<h3>Al Hoceima Launches DeFi Wallet Initiative for Rural Financial Inclusion</h3>
+<p>New pilot program introduces mobile RIFFAN wallet to underserved communities across northern Rif coast.</p>
+<div class="meta"><span>🕒 3 hours ago</span><span>5 min read • 0.02$</span></div>
+</div>
+</div>
+
+</div>
+
+<div class="bottom">
+<div class="box">
+<small style="color:#d4af37">MARKET INSIGHTS</small>
+<b style="display:block;margin:4px 0">RIFFAN Performance</b>
+<div style="height:40px;background:linear-gradient(90deg,transparent 0%,#d4af3722 100%);border-bottom:1px solid #d4af37;margin:8px 0;position:relative">
+<div style="position:absolute;bottom:0;left:0;right:0;height:20px;background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22><polyline points=%220,20 20,15 40,18 60,10 80,12 100,5 120,8 140,0%22 fill=%22none%22 stroke=%22%23d4af37%22 stroke-width=%222%22/></svg>') no-repeat;background-size:100% 100%"></div>
+</div>
+<div style="display:flex;justify-content:space-between;font-size:10px;color:#888"><span>24h Volume:<br><b style="color:#fff">3.12M RIFFAN</b></span><span>Market Cap:<br><b style="color:#fff">$1.48M</b></span><span>Circulating:<br><b style="color:#fff">11.3B RIFFAN</b></span></div>
+</div>
+<div class="box" style="border-color:#d4af37">
+<small style="color:#d4af37">FEATURED • BOT 🤖</small>
+<b style="display:block;margin:4px 0;color:#d4af37">Rif 1923 Centenary: How the Republic Shapes Modern DeFi</b>
+<p style="font-size:11px;color:#888">Exploring the historical legacy of the 1923 Republic and its influence on today's decentralized finance across North Africa. Auto-updates every 10min from Rif sources.</p>
+<div style="margin-top:8px;font-size:9px"><span style="background:#111;padding:4px 8px;border-radius:12px;border:1px solid #d4af37">🤖 BOT: 20 words + source link = 100% legal</span></div>
+</div>
+</div>
+
+<div style="text-align:center;padding:14px;font-size:9px;color:#555">© 2026 RIFFAN.io • République du Rif 1923 • Privacy • Terms • Contact • Press • <a href="https://odin.fun/token/hjcn" target="_blank" style="color:#d4af37">Trade on ODIN.FUN →</a></div>
+</div>
+
+<div class="read-bar" id="readBar"><span id="readText">كـ تقرا... 0.02$</span><b id="readTimer" style="color:#00ff88;font-size:20px">30</b></div>
+
+<script>
+// === CONFIG 0.02$ + 400K + 6 MONTHS ===
+const PRICE=0.00013, REWARD_USD=0.02, RIFFAN_PER_ARTICLE=Math.floor(REWARD_USD/PRICE), TOTAL_POOL=400000;
+let articlesRead=parseInt(localStorage.getItem('riffan_articles')||'0');
+let wallet=localStorage.getItem('riffan_wallet')||'';
+
+function updateUI(){
+ let eur=articlesRead*REWARD_USD, rif=articlesRead*RIFFAN_PER_ARTICLE;
+ document.getElementById('ptsDisplay').innerText=eur.toFixed(2)+'$';
+ document.getElementById('eurTotal').innerText=eur.toFixed(2)+'$';
+ document.getElementById('poolLeft').innerText=(TOTAL_POOL-rif).toLocaleString()+' RIFFAN left';
+ let pct=Math.min(100,Math.floor(rif/TOTAL_POOL*100)); document.getElementById('poolFill').style.width=pct+'%'; document.getElementById('poolPct').innerText=pct+'%';
+ if(wallet) document.getElementById('walletBtn').innerText=wallet.slice(0,5)+'...';
+}
+function connectWallet(){let a=prompt('دخل BTC address باش نصيفط لك '+ (articlesRead*REWARD_USD).toFixed(2) +'$ = '+(articlesRead*RIFFAN_PER_ARTICLE)+' RIFFAN:'); if(a){wallet=a; localStorage.setItem('riffan_wallet',a); updateUI(); alert('تم الربط 🦁');}}
+function readArticle(el,id,sourceLink){
+ let today=new Date().toDateString();
+ if(localStorage.getItem('read_'+id+'_'+today)){alert('قريتي هاد الخبر اليوم! ✅'); if(sourceLink) window.open(sourceLink,'_blank'); return;}
+ let bar=document.getElementById('readBar'); bar.style.display='flex'; let sec=30;
+ document.getElementById('readText').innerText='كـ تقرا: '+el.querySelector('h3').innerText.slice(0,30)+'... → 0.02$';
+ let iv=setInterval(()=>{
+  sec--; document.getElementById('readTimer').innerText=sec;
+  if(sec<=0){clearInterval(iv); bar.style.display='none'; articlesRead++; localStorage.setItem('riffan_articles',articlesRead); localStorage.setItem('read_'+id+'_'+today,'1'); updateUI();
+   alert('برافو! ربحتي 0.02$ = '+RIFFAN_PER_ARTICLE+' RIFFAN 🎉\nالمجموع: '+(articlesRead*REWARD_USD).toFixed(2)+'$ = '+(articlesRead*RIFFAN_PER_ARTICLE)+' RIFFAN');
+   if(sourceLink){ if(confirm('بغيتي تمشي للمصدر الأصلي باش تكمل القراءة؟ (قانوني)')) window.open(sourceLink,'_blank'); }
+  }
+ },1000);
+}
+updateUI();
+
+// 🤖 BOT كل 10 دقايق - يجيب 20 كلمة فقط
+const SOURCES=[{name:'NadorCity',url:'https://www.nadorcity.com/feed/'},{name:'Ariffino',url:'https://www.ariffino.net/feed'}];
+async function botFetch(){
+ try{
+  let all=[];
+  for(let s of SOURCES){
+   let r=await fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(s.url));
+   let d=await r.json();
+   if(d.items) d.items.slice(0,2).forEach(it=>{
+    let words=it.description.replace(/<[^>]*>/g,'').split(' ').slice(0,20).join(' ')+'...';
+    all.push({title:it.title,excerpt:words,link:it.link,src:s.name});
+   });
+  }
+  let grid=document.getElementById('newsGrid');
+  document.querySelectorAll('.bot-card').forEach(e=>e.remove());
+  all.slice(0,2).forEach((n,i)=>{
+   let div=document.createElement('div'); div.className='card bot-card'; div.style.border='1px dashed #00ff88';
+   div.innerHTML=`<img src="https://picsum.photos/seed/${i}/600/300"><div class="body"><span class="tag" style="background:#00ff88;color:#000">🤖 ${n.src} BOT</span><span class="tag tag-green">+0.02$</span><h3>${n.title.slice(0,70)}</h3><p>${n.excerpt}</p><div class="meta"><span><a href="${n.link}" target="_blank" style="color:#00ff88">المصدر →</a></span><span>Bot • 20 words</span></div></div>`;
+   div.onclick=()=>readArticle(div,'bot'+i,n.link); grid.appendChild(div);
+  });
+  document.getElementById('botStat').innerText='🤖 BOT: Updated '+new Date().toLocaleTimeString();
+ }catch(e){console.log(e)}
+}
+botFetch(); setInterval(botFetch, 10*60*1000);
+</script>
 </body>
 </html>
