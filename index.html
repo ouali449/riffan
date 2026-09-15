@@ -1,75 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RIFFAN.IO - Official</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#070304;color:#e8d5b5;font-family:Arial}
-.yellow{background:linear-gradient(90deg,#d4af37,#f5d76e);color:#000;padding:14px;display:flex;justify-content:center;align-items:center;gap:10px;font-weight:900;font-size:17px;flex-wrap:wrap}
-.live{background:#000;color:#00ff88;padding:4px 10px;border-radius:6px;font-size:13px}
-.ticker{background:#1a0a0a;padding:9px;white-space:nowrap;overflow:hidden;font-size:12px;font-weight:700;border-bottom:1px solid #222}
-.ticker span{display:inline-block;animation:sc 70s linear infinite}
-@keyframes sc{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
-.header{text-align:center;padding:20px 15px}
-.logo{width:100px;height:100px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#f5d76e,#d4af37 45%,#8a6d1b);border:3px solid #f5d76e;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:40px;box-shadow:0 0 25px rgba(212,175,55,.6)}
-.news{background:#120a0a;border:1px solid #3a2222;border-left:4px solid #ff4444;margin:15px;border-radius:10px;padding:14px;text-align:left;max-width:700px;margin-left:auto;margin-right:auto}
-.news h3{color:#ff4444;font-size:12px;letter-spacing:1px;margin-bottom:6px}
-.news p{color:#e8d5b5;font-size:13px;line-height:1.4}
-.box{background:#141010;border:1px solid #2a1e1e;padding:13px;margin:10px;border-radius:12px;display:flex;justify-content:space-between;text-align:left;max-width:700px;margin-left:auto;margin-right:auto}
-.gold{border:2px solid #d4af37;background:linear-gradient(180deg,#211b06,#151005);box-shadow:0 0 20px rgba(212,175,55,.3)}
-.btn{display:block;margin:18px 15px;background:linear-gradient(90deg,#d4af37,#f5d76e);color:#000;padding:17px;border-radius:12px;font-weight:900;text-decoration:none;font-size:17px;max-width:700px;margin-left:auto;margin-right:auto;text-align:center}
-.up{color:#00ff88}.down{color:#ff5555}
-</style>
-</head>
-<body>
-
-<div class="yellow"><span>1. RIFFAN $0.00013</span><span class="live">+12.4% LIVE</span></div>
-<div class="ticker"><span id="tick">Loading LIVE market...</span></div>
-
-<div class="header">
-<div class="logo">🐎</div>
-<h1 style="letter-spacing:4px;font-size:32px">RIFFAN.IO</h1>
-<p style="color:#7a6650;font-size:11px;margin-top:6px">OFFICIAL • odin.fun/token/hjcn</p>
-</div>
-
-<!-- هادي هي الأخبار الجديدة LIVE -->
-<div class="news">
-<h3>🚨 BREAKING - 15 SEPT 2026 - 21:00</h3>
-<p><b>Clarity Act فشل فالسينا الأمريكي</b><br>
-التصويت: 49 مع، 50 ضد - خاصهم 60 صوت. السبب: قانون الأخلاق ديال ترامب و stablecoins. السوق هابط -3.9% ولكن odin.fun باقي حر!</p>
-</div>
-
-<div class="news" style="border-left-color:#d4af37">
-<h3 style="color:#d4af37">ℹ️ شنو كيعني لـ RIFFAN؟</h3>
-<p>مادام ما كاينش قانون جديد، منصات بحال odin.fun غتبقى خدامة بلا قيود. هادي فرصة لـ RIFFAN باش يكبر قبل التنظيم فـ 2027.</p>
-</div>
-
-<div id="list"></div>
-
-<a class="btn" href="https://odin.fun/token/hjcn" target="_blank">BUY RIFFAN ON ODIN.FUN 🚀</a>
-<p style="text-align:center;color:#333;font-size:10px;padding-bottom:30px">© 2026 RIFFAN.IO - The First Rif Coin on Bitcoin</p>
-
-<script>
-async function load(){
- try{
-  let r=await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin,ethereum,solana,tether,binancecoin,ripple,usd-coin,dogecoin,cardano,tron,avalanche-2,shiba-inu,chainlink,polkadot&order=market_cap_desc&per_page=14&page=1&price_change_percentage=24h');
-  let d=await r.json();
-  let tick="1. RIFFAN $0.00013 +12.4% • ";
-  let html='<div class="box gold"><div><b>1. RIFFAN • RIF</b><br><small style="color:#d4af37">$0.00013 • odin.fun/token/hjcn</small></div><div class="up" style="font-weight:900">+12.4%</div></div>';
-  d.forEach((c,i)=>{
-    let cl=c.price_change_percentage_24h>=0?'up':'down';
-    let s=c.price_change_percentage_24h>=0?'+':'';
-    let p=c.current_price>=1?c.current_price.toLocaleString():c.current_price;
-    tick+=(i+2)+". "+c.symbol.toUpperCase()+" $"+p+" "+s+c.price_change_percentage_24h.toFixed(1)+"% • ";
-    html+='<div class="box"><div><b>'+(i+2)+'. '+c.symbol.toUpperCase()+'</b><br><small style="color:#666">$'+p+'</small></div><div class="'+cl+'" style="font-weight:900">'+s+c.price_change_percentage_24h.toFixed(2)+'%</div></div>';
-  });
-  document.getElementById('tick').innerHTML=tick+tick;
-  document.getElementById('list').innerHTML=html;
- }catch(e){}
+{
+  "riffan_price": "$0.00013",
+  "riffan_change": "+12.4%",
+  "riffan_marketcap": "$13,000",
+  "riffan_volume": "$2,450",
+  "riffan_holders": "127",
+  "riffan_link": "https://odin.fun/token/hjcn",
+  "news": [
+    {
+      "type": "breaking",
+      "title": "🚨 BREAKING • 15 SEPT 2026",
+      "text": "Clarity Act فشل فالسينا - 49 مع، 50 ضد - السوق هابط -3.9% ولكن RIFFAN باقي حر!"
+    },
+    {
+      "type": "charity",
+      "title": "❤️ عمل خير • دوار إكاون",
+      "text": "تم توزيع 50 قفة بفضل RIFFAN"
+    }
+  ]
 }
-load(); setInterval(load,60000);
-</script>
-</body>
-</html>
