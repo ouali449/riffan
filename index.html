@@ -27,15 +27,8 @@
 </style>
 </head>
 <body>
-
-<div class="ticker">
-<span>🪙 RIFFAN $0.00013 <b class="up">+5.2%</b></span>
-<span>₿ BTC $67,420 <b class="up">+1.4%</b></span>
-<span>♦ ETH $3,850 <b class="up">+2.1%</b></span>
-<span>✕ XRP $0.62 <b style="color:#ff5a5a">-0.8%</b></span>
-<span>◎ SOL $178 <b class="up">+6.3%</b></span>
-<span style="margin-left:auto;color:#00ff88" id="botStat">🤖 BOT: Active (10min)</span>
-</div>
+<div id="riffan-ticker" style="background:#0a0a0a;border-bottom:1px solid #222;height:36px;display:flex;align-items:center;overflow:hidden;white-space:nowrap;font-family:monospace;font-size:13px;color:#e0c9a6;position:relative"><div style="display:flex;gap:30px;animation:scroll 40s linear infinite"><span style="color:#ffd700;font-weight:bold">🪙 RIFFAN $0.00013 ▲ +4.2%</span> • <span>₿ BTC $<span id="bP">67,420</span> <span id="bC" style="color:#4ade80">▲ +1.4%</span></span> • <span>♦ ETH $<span id="eP">3,850</span> <span id="eC" style="color:#4ade80">▲ +2.1%</span></span> • <span>◎ SOL $<span id="sP">178</span> <span id="sC" style="color:#4ade80">▲ +6.3%</span></span> • <span>✕ XRP $<span id="xP">0.62</span> <span id="xC" style="color:#f87171">▼ -0.5%</span></span></div></div><style>@keyframes scroll{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}</style><script>async function live(){try{let r=await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,ripple&vs_currencies=usd&include_24hr_change=true');let d=await r.json();function u(p,c,pr,ch){document.getElementById(p).innerText=pr.toLocaleString();let e=document.getElementById(c);e.innerText=(ch>=0?`▲ +${ch.toFixed(2)}%`:`▼ ${ch.toFixed(2)}%`);e.style.color=ch>=0?'#4ade80':'#f87171'}u('bP','bC',d.bitcoin.usd,d.bitcoin.usd_24h_change);u('eP','eC',d.ethereum.usd,d.ethereum.usd_24h_change);u('sP','sC',d.solana.usd,d.solana.usd_24h_change);u('xP','xC',d.ripple.usd,d.ripple.usd_24h_change)}catch(e){}}live();setInterval(live,60000);</script>
+<div 
 
 <div class="hdr">
 <div class="logo">
