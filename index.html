@@ -50,3 +50,16 @@ body{background:#0a0505;color:#fff;font-family:Arial}
 
 </body>
 </html>
+<span id="apt-live" style="color:#00e5ff">APT ⏳</span>
+
+<script>
+fetch('https://api.coingecko.com/api/v3/simple/price?ids=aptos&vs_currencies=eur&include_24hr_change=true')
+.then(r=>r.json())
+.then(d=>{
+  let p = d.aptos.eur;
+  let c = d.aptos.eur_24h_change;
+  let col = c>=0 ? '#00ff88' : '#ff4444';
+  let arrow = c>=0 ? '▲' : '▼';
+  document.getElementById('apt-live').innerHTML = `APT €${p} <span style="color:${col}">${arrow}${Math.abs(c).toFixed(2)}%</span>`;
+});
+</script>
