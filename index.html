@@ -23,7 +23,91 @@ body{background:#0a0505;color:#fff;font-family:Arial}
 </style>
 </head>
 <body>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riffan.io | أخبار العملات الرقمية</title>
+<style>
+body{background-color:#0a0505;color:#fff;font-family:'Segoe UI',Tahoma,sans-serif;margin:0;padding:0}
+.top-header{text-align:center;padding:25px;background:#140a0a;border-bottom:2px solid #ffbc00}
+.top-header h1{color:#ffbc00;letter-spacing:5px;font-size:32px;margin:0}
+.top-header p{color:#8a7f71;font-size:12px;margin-top:6px}
+/* تكر صغير فيه RIFFAN و APTOS */
+.mini-ticker{background:#000;border-bottom:1px solid #2a1b14;padding:8px 0;overflow:hidden;white-space:nowrap}
+.mini-ticker-track{display:inline-block;animation:scroll 20s linear infinite}
+.mini-ticker-track span{margin-left:35px;font-weight:900;font-size:14px}
+@keyframes scroll{from{transform:translateX(50%)}to{transform:translateX(-100%)}}
+.main-container{max-width:1200px;margin:0 auto;padding:30px 20px}
+.section-title{color:#ffbc00;border-bottom:2px solid #ffbc00;padding-bottom:10px;margin-bottom:25px;font-size:22px}
+.news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-bottom:50px}
+.news-card{background-color:#2a1b14;border-radius:10px;overflow:hidden;border:1px solid #3a2a1a;transition:transform 0.3s}
+.news-card:hover{transform:translateY(-5px);border-color:#ffbc00}
+.news-content{padding:20px}
+.news-content h3{margin:0 0 10px 0;font-size:16px;color:#fff}
+.news-content p{font-size:13px;color:#ccc;line-height:1.6}
+.ticker-section{background-color:#1a0f0a;padding:15px;border-radius:10px;margin-bottom:40px;border:1px solid #2a1b14}
+.buy-btn{display:block;max-width:400px;margin:30px auto;background:linear-gradient(90deg,#d4af37,#ffbc00);color:#000;text-align:center;padding:16px;border-radius:12px;font-weight:900;text-decoration:none;font-size:18px}
+.gold{color:#ffbc00}.green{color:#00ff88}.blue{color:#00e5ff}.red{color:#ff4444}
+</style>
+</head>
+<body>
 
+<div class="top-header">
+<h1>RIFFAN.IO</h1>
+<p>First Rif Coin - EST 1923 - riffan.io</p>
+</div>
+
+<!-- تكر متحرك فيه APTOS -->
+<div class="mini-ticker">
+<div class="mini-ticker-track">
+<span class="gold">RIFFAN $0.0000085 <span class="green">▲+1.2%</span></span>
+<span class="blue">APTOS €3.84 <span class="green">▲+2.5%</span></span>
+<span>BTC $108,500 <span class="red">▼4.23%</span></span>
+<span>ETH $2,450 <span class="red">▼6.08%</span></span>
+<span>SOL $142 <span class="red">▼6.25%</span></span>
+<span class="gold">RIFFAN $0.0000085 <span class="green">▲+1.2%</span></span>
+<span class="blue">APTOS €3.84 <span class="green">▲+2.5%</span></span>
+<span>BTC $108,500 <span class="red">▼4.23%</span></span>
+</div>
+</div>
+
+<div class="main-container">
+
+<h2 class="section-title">📊 مراقبة حركة السوق المباشرة</h2>
+<div class="ticker-section">
+<div class="tradingview-widget-container">
+<div class="tradingview-widget-container__widget"></div>
+<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+{
+"width": "100%",
+"height": 400,
+"defaultColumn": "overview",
+"screener_type": "crypto",
+"displayCurrency": "USD",
+"colorTheme": "dark",
+"locale": "ar",
+"isTransparent": true
+}
+</script>
+</div>
+</div>
+
+<h2 class="section-title">📰 آخر مستجدات العملات الرقمية</h2>
+<div class="news-grid">
+<div class="news-card"><div class="news-content"><h3>🔵 APTOS يصعد رغم هبوط السوق</h3><p>عملة APTOS تظهر قوة شرائية كبيرة اليوم +2.5% بينما البيتكوين نازل، مع حجم تداول قياسي على شبكة Aptos.</p></div></div>
+<div class="news-card"><div class="news-content"><h3>⚠️ هبوط مفاجئ في السوق بعد تصويت مجلس الشيوخ</h3><p>فشل مجلس الشيوخ في تمرير قانون الوضوح التنظيمي للكريبتو مما تسبب في هبوط البيتكوين 4%.</p></div></div>
+<div class="news-card"><div class="news-content"><h3>💳 إطلاق بطاقات فيزا مشفرة جديدة</h3><p>منصات كبرى توفر بطاقات Visa تعطي 10% استرداد نقدي لتسهيل استخدام الكريبتو يومياً.</p></div></div>
+<div class="news-card"><div class="news-content"><h3>🛍️ Tonkeeper تعلن عن هويتها الجديدة</h3><p>أعادت المحفظة إطلاق نفسها تحت اسم "Keeper" مع دعم 7 شبكات بلوكشين.</p></div></div>
+<div class="news-card"><div class="news-content"><h3>🏴 RIFFAN أول عملة ريفية</h3><p>مشروع RIFFAN يواصل البناء على Odin.fun - مجتمع الريف صامد رغم تقلبات السوق.</p></div></div>
+</div>
+
+<a class="buy-btn" href="https://odin.fun/token/hjcn" target="_blank">BUY RIFFAN 🚀 | BUY APTOS</a>
+</div>
+
+</body>
+</html>
 <div class="head">
 <h1>RIFFAN.IO</h1>
 <p>First Rif Coin - EST 1923</p>
