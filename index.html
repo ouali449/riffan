@@ -1,129 +1,35 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>RIFFAN.IO</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0b0e1a;color:#fff;font-family:Arial,sans-serif}
-.app{max-width:480px;margin:0 auto;background:#0b0e1a;min-height:100vh}
-.top-bar{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px}
-.card{background:#1c1f2d;border-radius:16px;padding:12px}
-.card small{color:#8a8ea1;font-size:10px}
-.card .val{font-weight:900;font-size:18px;margin-top:4px}
-.card .down{color:#ff4d4d;font-size:12px}
-.bar{height:6px;background:#2a2e42;border-radius:10px;margin-top:8px;overflow:hidden}
-.bar-fill{height:100%;background:linear-gradient(90deg,#ff3b30,#ffcc00);width:33%}
-.circle{width:46px;height:46px;border-radius:50%;border:4px solid #2a2e42;border-top-color:#ffcc00;border-right-color:#00ff88;transform:rotate(45deg)}
-.ticker{background:#11131f;border-top:1px solid #1c1f2d;border-bottom:1px solid #1c1f2d;overflow:hidden;white-space:nowrap;padding:10px 0}
-.ticker-inner{display:inline-block;animation:scroll 25s linear infinite}
-.ticker-inner span{margin-right:30px;font-size:13px;font-weight:700}
-.ticker-inner b{color:#fff}
-.gold{color:#f5d76e!important}
-.green{color:#16c784}
-.red{color:#ff4d4d}
-@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.header{padding:18px 16px;display:flex;justify-content:space-between;align-items:center}
-.header h1{font-size:26px;letter-spacing:2px}
-.grid{padding:16px;display:grid;gap:12px}
-.news{background:#1c1f2d;border-radius:16px;overflow:hidden;border:1px solid #2a2e42}
-.news img{width:100%;height:160px;object-fit:cover}
-.news-body{padding:12px}
-.news-body h3{font-size:14px;margin-bottom:6px}
-.news-body p{font-size:12px;color:#8a8ea1}
-.buy{display:block;margin:16px;background:linear-gradient(90deg,#d4af37,#f5d76e);color:#000;text-align:center;padding:14px;border-radius:14px;font-weight:900;text-decoration:none}
+body{margin:0;background:#0a0505;color:#fff;font-family:Arial}
+.header{text-align:center;padding:30px;background:#140a0a;border-bottom:1px solid #2a1a0a}
+.header h1{color:#f5d76e;letter-spacing:4px;font-size:32px;margin:0}
+.ticker{background:#000;overflow:hidden;white-space:nowrap;padding:12px 0;border-bottom:1px solid #d4af37}
+.ticker div{display:inline-block;animation:scroll 20s linear infinite}
+.ticker span{margin-right:40px;font-weight:bold}
+@keyframes scroll{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
+.news{max-width:800px;margin:20px auto;padding:16px}
+.card{background:#1a0f0f;border:1px solid #2a1a0a;border-radius:10px;padding:14px;margin-bottom:12px}
+.card h3{margin:0 0 8px;color:#fff}
+.card p{margin:0;color:#8a7f71;font-size:13px}
+.buy{display:block;max-width:300px;margin:30px auto;background:#d4af37;color:#000;text-align:center;padding:14px;border-radius:10px;font-weight:900;text-decoration:none}
 </style>
 </head>
 <body>
-<div class="app">
 
-<!-- 4 CARDS بحال CMC -->
-<div class="top-bar">
-  <div class="card"><small>Cap. Boursière</small><div class="val">€2,23T <span class="down">▼ 4,12%</span></div></div>
-  <div class="card"><small>CMC20</small><div class="val">$156,94 <span class="down">▼ 4,73%</span></div></div>
-  <div class="card"><small>Indice des altcoins</small><div class="val">33/100</div><div class="bar"><div class="bar-fill"></div></div></div>
-  <div class="card" style="display:flex;justify-content:space-between;align-items:center"><div><small>Fear & Greed</small><div class="val" style="font-size:26px">63</div></div><div class="circle"></div></div>
-</div>
+<div class="header"><h1>RIFFAN.IO</h1><p style="color:#8a7f71;font-size:12px">First Rif Coin - EST 1923</p></div>
 
-<!-- TICKER كيتمشى - فيه RIFFAN اللول -->
-<div class="ticker">
-  <div class="ticker-inner">
-    <span><b class="gold">RIFFAN</b> $0.0000085 <span class="green">▲ +1.2%</span></span>
-    <span><b>BTC</b> €65,408 <span class="red">▼ 4,23%</span></span>
-    <span><b>ETH</b> €2,075 <span class="red">▼ 6,08%</span></span>
-    <span><b>USDT</b> €0,86 <span class="red">▼ 0,05%</span></span>
-    <span><b>XRP</b> €1,11 <span class="red">▼ 11,16%</span></span>
-    <span><b>SOL</b> €83,90 <span class="red">▼ 6,25%</span></span>
-    <!-- نعاودو باش ما يبقاش فراغ -->
-    <span><b class="gold">RIFFAN</b> $0.0000085 <span class="green">▲ +1.2%</span></span>
-    <span><b>BTC</b> €65,408 <span class="red">▼ 4,23%</span></span>
-    <span><b>ETH</b> €2,075 <span class="red">▼ 6,08%</span></span>
-    <span><b>USDT</b> €0,86 <span class="red">▼ 0,05%</span></span>
-    <span><b>XRP</b> €1,11 <span class="red">▼ 11,16%</span></span>
-    <span><b>SOL</b> €83,90 <span class="red">▼ 6,25%</span></span>
-  </div>
-</div>
-
-<div class="header"><h1>RIFFAN.IO</h1><span style="font-size:12px;color:#f5d76e">● LIVE</span></div>
-
-<div class="grid">
-  <div class="news"><img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=600"><div class="news-body"><h3>Nador Port - Volume en hausse malgré le marché rouge</h3><p>Les traders du Rif tiennent RIFFAN fort même à -4%.</p></div></div>
-  <div class="news"><img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=600"><div class="news-body"><h3>Al Hoceima Blockchain Summit</h3><p>Les bâtisseurs continuent - Bear market n'arrête pas l'innovation du Rif.</p></div></div>
-</div>
-
-<a class="buy" href="https://odin.fun/token/hjcn" target="_blank">BUY RIFFAN 🚀</a>
-<div style="text-align:center;color:#5a5e75;font-size:10px;padding-bottom:20px">RIFFAN • First Rif Coin • EST 1923 • riffan.io</div>
-
-</div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta
-  <!-- TOP STATS بحال CMC -->
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px;background:#0e111a">
-  <div style="background:#1c1f2d;border-radius:14px;padding:10px">
-    <small style="color:#8a8ea1;font-size:10px">Cap. Boursière</small>
-    <div style="font-weight:800;font-size:16px;margin-top:4px">€2,23T <span style="color:#ff4d4d;font-size:12px">▼ 4,12%</span></div>
-  </div>
-  <div style="background:#1c1f2d;border-radius:14px;padding:10px">
-    <small style="color:#8a8ea1;font-size:10px">CMC20</small>
-    <div style="font-weight:800;font-size:16px;margin-top:4px">$156,94 <span style="color:#ff4d4d;font-size:12px">▼ 4,73%</span></div>
-  </div>
-  <div style="background:#1c1f2d;border-radius:14px;padding:10px">
-    <small style="color:#8a8ea1;font-size:10px">Indice des altcoins</small>
-    <div style="font-weight:800;margin-top:4px">33/100</div>
-    <div style="height:6px;background:#2a2e42;border-radius:10px;margin-top:6px"><div style="width:33%;height:100%;background:linear-gradient(90deg,#ff3b30,#ffcc00)"></div></div>
-  </div>
-  <div style="background:#1c1f2d;border-radius:14px;padding:10px;display:flex;justify-content:space-between;align-items:center">
-    <div><small style="color:#8a8ea1;font-size:10px">Fear & Greed</small><div style="font-weight:800;font-size:22px;margin-top:4px">63</div></div>
-    <div style="width:50px;height:50px;border:4px solid #333;border-top-color:#ffcc00;border-right-color:#00ff88;border-bottom-color:#00ff88;border-radius:50%;transform:rotate(-30deg)"></div>
-  </div>
-</div>
-
-<!-- TICKER كيتمشى حقيقي -->
-<div style="background:#0f0a0a;overflow:hidden;white-space:nowrap;padding:8px 0;border-bottom:1px solid #1c1f2d">
-  <div id="real-ticker" style="display:inline-block;animation:scroll 35s linear infinite">⏳ Chargement prix réels...</div>
-</div>
-<style>@keyframes scroll{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}</style>
-
-<script>
-async function realPrices(){
-  try{
-    const r = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&ids=bitcoin,ethereum,tether,ripple,solana&order=market_cap_desc&price_change_percentage=24h');
-    const d = await r.json();
-    let h = `<span style="margin-right:40px;color:#f5d76e"><b>RIFFAN</b> $0.0000085 <span style="color:#00ff88">▲ +1.2%</span></span>`;
-    d.forEach(c=>{
-      const col = c.price_change_percentage_24h>=0?'#00ff88':'#ff4d4d';
-      const ar = c.price_change_percentage_24h>=0?'▲':'▼';
-      h+=`<span style="margin-right:40px"><b>${c.symbol.toUpperCase()}</b> €${c.current_price.toLocaleString('fr-FR')} <span style="color:${col}">${ar} ${Math.abs(c.price_change_percentage_24h).toFixed(2)}%</span></span>`;
-    });
-    document.getElementById('real-ticker').innerHTML = h+h; // نعاودو 2 مرات باش ما يبقاش فراغ
-  }catch(e){
-    document.getElementById('real-ticker').innerHTML = 'BTC €65,408 ▼ 4,23% • ETH €2,075 ▼ 6,08% • USDT €0,86 ▼ 0,05% • XRP €1,11 ▼ 11,16% • SOL €83,90 ▼ 6,25%';
-  }
-}
-realPrices();
-</script>
+<div class="ticker"><div>
+<span style="color:#f5d76e">RIFFAN $0.0000085 ▲ +1.2%</span>
+<span>BTC €65,408 ▼ 4.23%</span>
+<span>ETH €2,075 ▼ 6.08%</span>
+<span>SOL €83.90 ▼ 6.25%</span>
+<span style="color:#f5d76e">RIFFAN $0.0000085 ▲ +1.2%</span>
+<span>BTC €65,408 ▼ 4.23%</span>
+<span>ETH €2,075 ▼ 6.08%</span>
+<span>SOL €83.90 ▼ 6.25%</span>
+</div
