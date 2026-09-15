@@ -53,7 +53,35 @@ body{background-color:#0a0505;color:#fff;font-family:'Segoe UI',Tahoma,sans-seri
 </style>
 </head>
 <body>
+<style>
+.buy-button {
+    background-color: #ffbc00;
+    color: #1a0f0a;
+    font-weight: bold;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 0 0 rgba(255, 188, 0, 0.7);
+    animation: pulsing 1.6s infinite;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+@keyframes pulsing {
+    0% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(255, 188, 0, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(255, 188, 0, 0); }
+    100% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(255, 188, 0, 0); }
+}
+.buy-button:hover { background-color: #ffcc33; transform: scale(1.05); }
+</style>
 
+<!-- الزر فالصفحة -->
+<div style="text-align:center; margin: 30px 0;">
+  <a href="https://odin.fun/token/hjcn" target="_blank" class="buy-button">BUY RIFFAN 🚀</a>
+</div>
 <div class="top-header">
 <h1>RIFFAN.IO</h1>
 <p>First Rif Coin - EST 1923 - riffan.io</p>
