@@ -1,77 +1,70 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RIFFAN.IO</title>
+<title>RIFFAN.IO - Official $RIFFAN</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@700&display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#0a0506;color:#e8d5b5;font-family:Arial,sans-serif}
-.top{padding:14px;text-align:center;background:#000;border-bottom:1px solid #332222;overflow:hidden;white-space:nowrap;font-size:13px;font-weight:bold}
-.top span{display:inline-block;animation:scroll 60s linear infinite}
-@keyframes scroll{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
-.header{padding:20px;text-align:center;border-bottom:1px solid #222}
-.logo{width:80px;height:80px;border-radius:50%;border:3px solid #d4af37;margin:0 auto 10px;display:block;object-fit:cover;background:#111}
-h1{letter-spacing:3px;margin:10px 0 0 0}
-p{color:#8a7660;font-size:13px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:20px;max-width:800px;margin:0 auto}
-.box{background:#151010;border:1px solid #2a1a1a;border-radius:10px;padding:14px}
-.box b{display:block;font-size:14px;margin-bottom:4px}
-.box span{font-size:12px}
-.gold{border-color:#d4af37;background:#1e1805}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#070304;color:#e8d5b5;font-family:'Inter',sans-serif}
+.ticker{background:#1a0a0a;border-bottom:1px solid #3a2020;padding:9px 0;white-space:nowrap;overflow:hidden;font-weight:800;font-size:13px}
+.ticker div{display:inline-block;padding-left:100%;animation:sc 80s linear infinite}
+@keyframes sc{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
 .up{color:#00ff88}.down{color:#ff5555}
-.btn{display:inline-block;margin:20px auto;background:#d4af37;color:#000;padding:14px 30px;border-radius:8px;font-weight:900;text-decoration:none;text-align:center}
-.center{text-align:center;padding-bottom:40px}
+.header{display:flex;justify-content:space-between;align-items:center;padding:20px 30px;background:#0a0506;border-bottom:1px solid #222}
+.logo{width:58px;height:58px;border-radius:50%;border:2px solid #d4af37;object-fit:cover}
+.logot{font-family:'Cinzel',serif;font-size:30px;letter-spacing:2px}
+.hero{text-align:center;padding:35px 15px}
+.hero h1{font-family:'Cinzel',serif;font-size:34px;letter-spacing:4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:900px;margin:0 auto;padding:10px 15px 30px}
+.coin{background:#151010;border:1px solid #2a1e1e;border-radius:10px;padding:13px;display:flex;justify-content:space-between;align-items:center}
+.gold{border-color:#d4af37;background:linear-gradient(180deg,#221b05,#151005);box-shadow:0 0 15px rgba(212,175,55,.4)}
+.btn{display:block;max-width:340px;margin:10px auto;background:#d4af37;color:#000;text-align:center;padding:16px;border-radius:10px;font-weight:900;text-decoration:none;font-size:16px;letter-spacing:1px}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<div class="top"><span id="ticker">Loading live prices...</span></div>
+<div class="ticker"><div id="tick">RIFFAN $0.00013 <span class="up">+12.4% ▲</span> • BTC $64812 • ETH $3245 • SOL $162 • Loading LIVE...</div></div>
 
 <div class="header">
-<img src="coin.png" class="logo" onerror="this.style.background='#d4af37';this.src='';this.innerHTML='R'">
-<h1>RIFFAN.IO</h1>
-<p>LIVE CRYPTO TOP 20 - RIFFAN ALWAYS #1</p>
+<div style="display:flex;align-items:center;gap:12px">
+<img src="coin.png" class="logo" onerror="this.src='https://i.imgur.com/8QJ4sQp.png'">
+<div class="logot">RIFFAN.IO</div>
+</div>
+<div style="color:#8a7660;font-size:11px">OFFICIAL SITE</div>
 </div>
 
-<div class="grid" id="grid">Loading...</div>
-
-<div class="center">
-<a class="btn" href="https://odin.fun" target="_blank">BUY RIFFAN ON ODIN.FUN</a>
+<div class="hero">
+<h1>LIVE MARKETS</h1>
+<p style="color:#8a7660;font-size:12px;margin-top:6px">RIFFAN ALWAYS #1 • TOP 20 CRYPTO</p>
 </div>
+
+<div class="grid" id="grid">
+<div class="coin gold"><div><b>1. RIFFAN</b><br><small style="color:#d4af37">$0.00013</small></div><div class="up" style="font-weight:900">+12.4%</div></div>
+<div class="coin"><div><b>Loading...</b></div></div>
+</div>
+
+<a class="btn" href="https://odin.fun/token/hjcn" target="_blank">BUY RIFFAN • ODIN.FUN</a>
+<a class="btn" href="https://odin.fun/token/hjcn" target="_blank" style="background:#111;color:#d4af37;border:1px solid #d4af37;margin-bottom:40px">VIEW CHART ON ODIN</a>
+
+<p style="text-align:center;color:#444;font-size:10px;padding-bottom:30px">RIFFAN.IO • The First Rif Coin on Bitcoin</p>
 
 <script>
-async function load(){
+async function live(){
  try{
-  let r = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin,ethereum,tether,solana,binancecoin,ripple,usd-coin,dogecoin,cardano,tron,avalanche-2,shiba-inu,chainlink,polkadot,bitcoin-cash,litecoin,pepe,uniswap,ethereum-classic&order=market_cap_desc&per_page=19&page=1&sparkline=false&price_change_percentage=24h');
-  let d = await r.json();
-  let all = [{symbol:'RIFFAN',current_price:0.00013,change:12.4,gold:true}].concat(d.map(x=>({symbol:x.symbol.toUpperCase(),current_price:x.current_price,change:x.price_change_percentage_24h})));
-  
-  let t='';
-  all.forEach((c,i)=>{
-    let cls=c.change>=0?'up':'down';
-    let s=c.change>=0?'+':'';
-    let pr=c.current_price>=1?c.current_price.toLocaleString():c.current_price;
-    t+= (i+1)+'. '+c.symbol+' $'+pr+' <span class="'+cls+'">'+s+c.change.toFixed(1)+'%</span> • ';
-  });
-  document.getElementById('ticker').innerHTML=t+t;
-
-  let g='';
-  all.forEach((c,i)=>{
-    let cls=c.change>=0?'up':'down';
-    let s=c.change>=0?'+':'';
-    let pr=c.current_price>=1?c.current_price.toLocaleString():c.current_price;
-    let gold=c.gold?'gold':'';
-    g+='<div class="box '+gold+'"><b>'+(i+1)+'. '+c.symbol+'</b><span>$'+pr+'</span><span class="'+cls+'" style="float:right;font-weight:900">'+s+c.change.toFixed(2)+'%</span></div>';
-  });
-  document.getElementById('grid').innerHTML=g;
- }catch(e){
-  document.getElementById('ticker').innerHTML='RIFFAN $0.00013 +12.4% • BTC $64812 -0.8% • ETH $3245 +2.1% • SOL $162 +3.7% •';
-  document.getElementById('grid').innerHTML='Error loading - check internet';
- }
+  const ids="bitcoin,ethereum,tether,solana,binancecoin,ripple,usd-coin,dogecoin,cardano,tron,avalanche-2,shiba-inu,chainlink,polkadot,bitcoin-cash,litecoin,pepe,uniswap,stellar";
+  const r=await fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids="+ids+"&order=market_cap_desc&per_page=19&page=1&price_change_percentage=24h");
+  const d=await r.json();
+  let all=[{sym:"RIFFAN",price:0.00013,chg:12.4,gold:true}].concat(d.map(x=>({sym:x.symbol.toUpperCase(),price:x.current_price,chg:x.price_change_percentage_24h})));
+  let t=""; all.forEach((c,i)=>{let cl=c.chg>=0?"up":"down";let s=c.chg>=0?"+":"";let p=c.price>=1?c.price.toLocaleString():c.price; t+=(i+1)+". "+c.sym+" $"+p+" <span class='"+cl+"'>"+s+c.chg.toFixed(1)+"%</span> • ";});
+  document.getElementById("tick").innerHTML=t+t;
+  let g=""; all.forEach((c,i)=>{let cl=c.chg>=0?"up":"down";let s=c.chg>=0?"+":"";let p=c.price>=1?c.price.toLocaleString():c.price;let gg=c.gold?"gold":""; g+='<div class="coin '+gg+'"><div><b>'+(i+1)+'. '+c.sym+'</b><br><small>$'+p+'</small></div><div class="'+cl+'" style="font-weight:900">'+s+c.chg.toFixed(2)+'%</div></div>';});
+  document.getElementById("grid").innerHTML=g;
+ }catch(e){}
 }
-load();
-setInterval(load,60000);
+live(); setInterval(live,60000);
 </script>
 </body>
 </html>
