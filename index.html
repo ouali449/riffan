@@ -72,7 +72,38 @@ body{background-color:#0a0505;color:#fff;font-family:'Segoe UI',Tahoma,sans-seri
 <span>BTC $108,500 <span class="red">▼4.23%</span></span>
 </div>
 </div>
+<h2 class="section-title">📰 آخر مستجدات العملات الرقمية (تحديث تلقائي)</h2>
+<div class="news-grid" id="crypto-news-container">
+<p style="text-align:center;color:#ccc">جاري تحميل آخر الأخبار المباشرة...</p>
+</div>
 
+<script>
+async function fetchCryptoNews(){
+  const container=document.getElementById('crypto-news-container');
+  try{
+    const response=await fetch('https://min-api.cryptocompare.com/data/v2/news/?lang=EN&extraParams=riffan_io');
+    const data=await response.json();
+    container.innerHTML='';
+    data.Data.slice(0,6).forEach(newsItem=>{
+      const card=document.createElement('div');
+      card.className='news-card';
+      card.innerHTML=`
+        <a href="${newsItem.url}" target="_blank" style="text-decoration:none;color:inherit;display:block">
+          <div style="background-image:url('${newsItem.imageurl}');background-size:cover;background-position:center;height:180px;width:100%"></div>
+          <div class="news-content">
+            <span style="font-size:11px;color:#ffbc00;background:rgba(255,188,0,0.1);padding:3px 8px;border-radius:4px">${newsItem.source}</span>
+            <h3 style="margin-top:10px;font-size:16px">${newsItem.title}</h3>
+            <p>${newsItem.body.substring(0,120)}...</p>
+          </div>
+        </a>`;
+      container.appendChild(card);
+    });
+  }catch(error){
+    container.innerHTML='<p style="text-align:center;color:#ff4444">عذراً، فشل تحميل الأخبار الحية حالياً.</p>';
+  }
+}
+fetchCryptoNews();
+</script>
 <div class="main-container">
 
 <h2 class="section-title">📊 مراقبة حركة السوق المباشرة</h2>
