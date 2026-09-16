@@ -1,4 +1,86 @@
 <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riffan.io | أول عملة رقمية لإرث الريف</title>
+<style>
+body{background:#1a0f0a;color:#fff;font-family:'Segoe UI',sans-serif;margin:0}
+.main-container{max-width:1200px;margin:0 auto;padding:40px 20px}
+.logo-box{text-align:center;margin-bottom:30px}
+.crypto-logo{width:140px;height:140px;border-radius:50%;border:3px solid #ffbc00;box-shadow:0 0 25px rgba(255,188,0,0.4);object-fit:cover}
+.values-section{background:#2a1b14;padding:30px;border-radius:12px;margin-bottom:40px;border-right:6px solid #ffbc00}
+.values-section h2{color:#ffbc00;margin-top:0}
+.values-section p{line-height:1.8;color:#e0e0e0}
+.buy-zone{text-align:center;margin:40px 0}
+.buy-button{background:#ffbc00;color:#1a0f0a;font-weight:bold;padding:18px 50px;border:none;border-radius:30px;font-size:22px;cursor:pointer;animation:pulsing 1.6s infinite;transition:0.3s;display:inline-block;text-decoration:none}
+@keyframes pulsing{0%{transform:scale(0.98);box-shadow:0 0 0 0 rgba(255,188,0,0.7)}70%{transform:scale(1);box-shadow:0 0 0 15px rgba(255,188,0,0)}100%{transform:scale(0.98);box-shadow:0 0 0 0 rgba(255,188,0,0)}}
+.buy-button:hover{background:#ffcc33;transform:scale(1.05)}
+.section-title{color:#ffbc00;border-bottom:2px solid #ffbc00;padding-bottom:10px;margin:30px 0}
+.news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.news-card{background:#2a1b14;border-radius:12px;overflow:hidden;border:1px solid #3a2a1a}
+.news-card:hover{border-color:#ffbc00}
+.news-content{padding:15px}
+</style>
+</head>
+<body>
+<div class="main-container">
+<div class="logo-box">
+<img src="logo.png" alt="Riffan Logo" class="crypto-logo">
+<h1 style="color:#ffbc00;margin-top:15px;letter-spacing:4px">RIFFAN.IO</h1>
+<p style="color:#ccc;font-style:italic">Le premier coin du Rif - 1923</p>
+</div>
+
+<div class="buy-zone">
+<a href="https://odin.fun/token/hjcn" target="_blank" style="text-decoration:none">
+<span class="buy-button">🚀 BUY $RIFFAN NOW</span>
+</a>
+</div>
+
+<div class="values-section">
+<h2>🦅 مشروع مبني على الثقة والكرامة</h2>
+<p>مشروع <strong>RIFFAN</strong> ليس مجرد عملة للمضاربة، بل هو تجسيد لقيم أجدادنا في الريف القائمة على <strong>الثقة والكرامة والشهامة</strong>. تم إطلاق التوكن ليكون رمزاً تكنولوجياً حديثاً يحمل فخر وإرث تاريخ 1923 العريق في أمان شبكة البلوكشين.</p>
+</div>
+
+<h2 class="section-title">📊 أسعار السوق المباشرة</h2>
+<div style="background:#2a1b14;padding:15px;border-radius:12px">
+<div class="tradingview-widget-container">
+<div class="tradingview-widget-container__widget"></div>
+<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+{"width":"100%","height":400,"defaultColumn":"overview","screener_type":"crypto","displayCurrency":"USD","colorTheme":"dark","locale":"ar","isTransparent":true}
+</script>
+</div>
+</div>
+
+<h2 class="section-title">📰 آخر مستجدات العملات الرقمية (تحديث تلقائي)</h2>
+<div class="news-grid" id="crypto-news-container">
+<p style="text-align:center;color:#ccc">جاري تحميل آخر الأخبار المباشرة...</p>
+</div>
+
+</div>
+
+<script>
+async function fetchCryptoNews(){
+ const c=document.getElementById('crypto-news-container');
+ try{
+  const r=await fetch('https://min-api.cryptocompare.com/data/v2/news/?lang=EN&extraParams=riffan_io');
+  const d=await r.json();
+  c.innerHTML='';
+  d.Data.slice(0,6).forEach(n=>{
+   const card=document.createElement('div');
+   card.className='news-card';
+   card.innerHTML=`<a href="${n.url}" target="_blank" style="text-decoration:none;color:inherit;display:block"><div style="background:url('${n.imageurl}') center/cover;height:180px"></div><div class="news-content"><span style="font-size:11px;color:#ffbc00;background:rgba(255,188,0,0.1);padding:3px 8px;border-radius:4px">${n.source}</span><h3 style="margin-top:10px;font-size:16px">${n.title}</h3><p style="color:#aaa;font-size:13px">${n.body.substring(0,110)}...</p></div></a>`;
+   c.appendChild(card);
+  });
+ }catch(e){c.innerHTML='<p style="text-align:center;color:#ff4444">فشل تحميل الأخبار</p>'}
+}
+fetchCryptoNews();
+setInterval(fetchCryptoNews,300000);
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
