@@ -161,3 +161,24 @@
     line-height:1.7;
   }
 </style>
+<div id="riffan-ai" style="position:fixed;bottom:20px;left:20px;z-index:9999">
+  <button onclick="document.getElementById('ai-chat').style.display='block'" style="background:#ffbc00;color:#1a0f0a;border:none;width:60px;height:60px;border-radius:50%;font-size:28px;cursor:pointer;box-shadow:0 0 20px rgba(255,188,0,0.6)">🤖</button>
+  <div id="ai-chat" style="display:none;background:#2a1b14;border:1px solid #ffbc00;border-radius:16px;width:300px;padding:15px;position:absolute;bottom:70px;left:0">
+    <h4 style="color:#ffbc00;margin:0 0 10px">مساعد RIFFAN الذكي</h4>
+    <p style="font-size:12px;color:#aaa">سولني أي حاجة على RIFFAN!</p>
+    <input id="ai-input" placeholder="شنو هو RIFFAN؟" style="width:100%;padding:8px;border-radius:8px;border:none;background:#1a0f0a;color:#fff">
+    <div id="ai-answer" style="margin-top:10px;font-size:13px;color:#e0e0e0"></div>
+  </div>
+</div>
+<script>
+document.getElementById('ai-input').addEventListener('keypress',function(e){
+ if(e.key==='Enter'){
+   let q=this.value.toLowerCase();
+   let a=document.getElementById('ai-answer');
+   if(q.includes('شنو')||q.includes('what')) a.innerHTML='RIFFAN هو أول عملة رقمية لإرث الريف، رمز للكرامة والثقة ديال 1923 على البلوكشين.';
+   else if(q.includes('فين')||q.includes('buy')) a.innerHTML='تقدر تشري RIFFAN دابا من odin.fun/token/hjcn 🚀';
+   else if(q.includes('ثمن')||q.includes('price')) a.innerHTML='الثمن Live كاين فوق فالموقع - كيتبدل كل ثانية!';
+   else a.innerHTML='RIFFAN مشروع ديال الثقة والكرامة، مبني للمستقبل ديال الريف 🌍🦅';
+ }
+});
+</script>
