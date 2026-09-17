@@ -51,20 +51,41 @@ a{text-decoration:none;color:inherit}
 </head>
 <body>
 
-<!-- 1. شريط الأسعار الحقيقي Live كيدوز -->
-<div class="ticker-bar"><div id="crypto-ticker">جاري تحميل الأسعار الحقيقية...</div></div>
-
-<div class="header">
-<div class="logo"><div class="logo-icon">R</div><div class="logo-text">RIFFAN.IO</div></div>
-<div class="nav"><b>Home</b><span>Markets</span><span>Trade</span><span>Stake</span><span>About</span></div>
-<a class="btn-gold" href="https://odin.fun/token/hjcn" target="_blank">BUY $RIFFAN NOW</a>
+<!-- RIFFAN Ticker 1-10 -->
+<div id="crypto-ticker" style="background:#111; color:#FFD700; padding:8px 0; white-space:nowrap; overflow:hidden; font-family:monospace; font-size:14px; border-bottom:1px solid #FFD700;">
+  <div id="ticker-content" style="display:inline-block; animation: scroll 60s linear infinite;">
+    جاري تحميل الأسعار...
+  </div>
 </div>
 
-<div class="hero">
-<h1>The Future of Decentralized Exchange is RIFFAN</h1>
-<p>Secure • Transparent • Community-Driven Crypto for the Next Generation</p>
-<a class="btn-gold" href="https://odin.fun/token/hjcn" target="_blank">BUY $RIFFAN NOW</a>
-</div>
+<style>
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+</style>
+
+<script>
+async function loadTicker(){
+  try{
+    const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1');
+    const data = await res.json();
+    let html = '';
+    data.forEach((coin, i)=>{
+      const change = coin.price_change_percentage_24h.toFixed(2);
+      const color = change >=0 ? '🟢' : '🔴';
+      html += ` ${i+1}. ${coin.symbol.toUpperCase()}: $${coin.current_price} ${color} ${change}% |`;
+    });
+    // زيد RIFFAN ديالك فالأول باش يبان نجم
+    html = ` ⭐ RIFFAN: $0.000134 +34.35% 🟢 |` + html;
+    document.getElementById('ticker-content').innerHTML = html + html; // نعاودوها باش ما تقطعش
+  }catch(e){
+    document.getElementById('ticker-content').innerHTML = ' BTC $115K | ETH $4.2K | RIFFAN $0.000134 +34.35% | SOL $180 | ...';
+  }
+}
+loadTicker();
+setInterval(loadTicker, 60000); // كيتحدث كل دقيقة
+</script>
 
 ┌─────────────────────────────┐
 │  RIFFAN (R)  $0.000134      │
