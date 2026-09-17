@@ -1,9 +1,247 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RIFFAN.IO</title><style>body{margin:0;background:#0d0202;color:#fff;font-family:Arial}.t{padding:8px;background:#1c0a0a;color:#ff9a9a;font-size:11px;text-align:center;border-bottom:1px solid #331515}.h{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:#140505}.l{color:#f0c878;font-weight:900}.b{background:#ffcc33;color:#000;padding:8px 18px;border-radius:20px;text-decoration:none;font-weight:900;font-size:12px}h1{text-align:center;color:#f0c878;letter-spacing:3px;margin:28px 0 6px}.s{text-align:center;color:#8a6a6a;font-size:11px;margin-bottom:18px}.g{padding:14px;display:grid;gap:14px;max-width:1000px;margin:auto}@media(min-width:720px){.g{grid-template-columns:repeat(3,1fr)}}.c{background:#221010;border:1px solid #3a2020;border-radius:10px;overflow:hidden}.c img{width:100%;height:150px;object-fit:cover}.p{padding:11px}.tag{font-size:9px;background:#4a1a1a;color:#ff8080;padding:3px 7px;border-radius:3px}.c h3{font-size:13px;margin:8px 0 4px;color:#f5e6c8}.c p{font-size:11px;color:#9a8a8a;margin:0}</style></head><body><div class="t">RIFFAN $0.00013 +5.2% | BTC $64k | ETH $3.2k | SOL $162 | RIF VOL $1.24M | odin.fun/token/hjcn</div><div class="h"><div class="l">🦁 RIFFAN.IO</div><a class="b" href="
-https://odin.fun/token/hjcn
-">BUY $RIFFAN</a></div><h1>LATEST NEWS</h1><div class="s">Regional updates from the Rif</div><div class="g"><div class="c"><img src="
-https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=600
-"><div class="p"><span class="tag">MARKETS</span><h3>Nador Boosts Crypto Adoption</h3><p>Pilot program in Nador drives 5.2% rise.</p></div></div><div class="c"><img src="
-https://images.unsplash.com/photo-1533105079780-92b9be482077?w=600
-"><div class="p"><span class="tag">REGIONAL</span><h3>Al Hoceima Blockchain Summit</h3><p>Empower Rif Youth with DeFi.</p></div></div><div class="c"><img src="
-https://images.unsplash.com/photo-1461360228755-6e81c478b882?w=600
-"><div class="p"><span class="tag">HISTORY</span><h3>RIF 1923 Legacy in Web3 Era</h3><p>Decentralized governance parallels.</p></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RIFFAN.IO - The Next-Gen Crypto Ecosystem</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#0c0505;color:#f0d9a0;font-family:Arial,sans-serif}
+  
+  /* Header */
+  .header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 28px;
+    background:#0f0705;
+    border-bottom:1px solid #2a1a10;
+    position:sticky;
+    top:0;
+    z-index:10;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    color:#e8c07a;
+    font-weight:800;
+    letter-spacing:3px;
+    font-size:20px;
+  }
+  .logo-circle{
+    width:52px;
+    height:52px;
+    border:1px solid #e8c07a;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#000;
+  }
+  .logo-circle svg{
+    width:40px;
+    height:40px;
+  }
+  .buy-btn{
+    background:#e8c07a;
+    color:#000;
+    padding:10px 28px;
+    border-radius:8px;
+    font-weight:800;
+    text-decoration:none;
+  }
+
+  /* Ticker */
+  .ticker{
+    display:flex;
+    gap:24px;
+    padding:12px 20px;
+    background:#140a06;
+    border-bottom:1px solid #e8c07a;
+    color:#e8c07a;
+    font-size:12px;
+    overflow:auto;
+    white-space:nowrap;
+  }
+  .green{color:#5aff8a}
+  .red{color:#ff6a6a}
+
+  /* Hero */
+  .hero{
+    text-align:center;
+    padding:70px 20px 30px;
+  }
+  .hero h1{
+    font-size:42px;
+    color:#e8c07a;
+    font-family:serif;
+    font-weight:300;
+  }
+  .hero p{
+    color:#c9b99f;
+    margin:16px auto;
+    max-width:600px;
+    font-size:14px;
+  }
+  .buttons{
+    margin-top:24px;
+    display:flex;
+    gap:14px;
+    justify-content:center;
+  }
+  .btn1{
+    background:#e8c07a;
+    color:#000;
+    padding:12px 24px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:700;
+  }
+  .btn2{
+    border:1px solid #e8c07a;
+    color:#e8c07a;
+    padding:12px 24px;
+    border-radius:8px;
+    text-decoration:none;
+  }
+
+  /* News */
+  .news{
+    padding:30px 28px;
+    max-width:1200px;
+    margin:auto;
+  }
+  .news h2{
+    color:#e8c07a;
+    font-size:18px;
+    margin-bottom:18px;
+    border-bottom:1px solid #e8c07a;
+    display:inline-block;
+    padding-bottom:6px;
+  }
+  .grid{
+    display:grid;
+    gap:18px;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  }
+  .card{
+    background:#17100c;
+    border:1px solid #3a2a1a;
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .card img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+  }
+  .card-info{
+    padding:14px;
+  }
+  .date{
+    background:#2a1a10;
+    color:#e8c07a;
+    font-size:10px;
+    padding:4px 8px;
+    border-radius:4px;
+  }
+  .card h3{
+    font-size:14px;
+    color:#e8c07a;
+    margin:10px 0 6px;
+  }
+  .card p{
+    font-size:12px;
+    color:#9a8a7a;
+  }
+
+  .footer{
+    text-align:center;
+    padding:20px;
+    color:#6a5a4a;
+    font-size:11px;
+    border-top:1px solid #1a100c;
+    margin-top:40px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER WITH NEW LOGO -->
+<div class="header">
+  <div class="logo">
+    <div class="logo-circle">
+      <!-- اللوغو اللي اختاريتي: جبال + R -->
+      <svg viewBox="0 0 100 75" fill="none" stroke="#e8c07a" stroke-width="1.8">
+        <!-- الجبال -->
+        <path d="M6 60 L30 26 L36 34 L32 44" fill="#e8c07a" stroke="none"/>
+        <path d="M26 60 L54 18 L62 32 L58 42" fill="none"/>
+        <path d="M68 30 L76 22 L84 32" fill="none"/>
+        <path d="M6 60 L30 26 L54 10 L92 60" fill="none"/>
+        <!-- حرف R -->
+        <path d="M38 70 V32 H52 C60 32 66 38 66 45 C66 52 60 58 52 58 H48 L48 52 H52 C57 52 60 48 60 45 C60 42 57 38 52 38 H44 V70 Z M48 58 L66 70 H58 L42 58 Z" 
+              fill="none" stroke="#e8c07a" stroke-width="1.6"/>
+      </svg>
+    </div>
+    RIFFAN.IO
+  </div>
+  <a class="buy-btn" href="https://odin.fun/token/hjcn" target="_blank">BUY</a>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div>BTC $62,418 <span class="green">+1.24% ▲</span></div>
+  <div>ETH $3,051 <span class="green">+0.87% ▲</span></div>
+  <div>SOL $142.53 <span class="red">-0.42% ▼</span></div>
+  <div>RIFF $0.248 <span class="green">+12.4% ▲</span></div>
+  <div>BNB $567.20 <span class="green">+0.91% ▲</span></div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>The Next-Gen Crypto Ecosystem</h1>
+  <p>Trade, stake, and earn with RIFFAN — secure, scalable, and built for the future of decentralized finance.</p>
+  <div class="buttons">
+    <a class="btn1" href="https://odin.fun/token/hjcn">Launch App</a>
+    <a class="btn2" href="#">Learn More</a>
+  </div>
+</div>
+
+<!-- NEWS -->
+<div class="news">
+  <h2>Latest News</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=600">
+      <div class="card-info">
+        <span class="date">Oct 05, 2024</span>
+        <h3>RIFFAN.IO Secures $5M Seed Round</h3>
+        <p>Funding will accelerate Layer-2 development.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?w=600">
+      <div class="card-info">
+        <span class="date">Oct 03, 2024</span>
+        <h3>New Staking Rewards Now Live</h3>
+        <p>Earn Up to 18% APY staking RIFF.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600">
+      <div class="card-info">
+        <span class="date">Sep 30, 2024</span>
+        <h3>Layer-2 Testnet Goes Live</h3>
+        <p>Build and test on RIFFAN L2 with reduced gas.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  © 2024 RIFFAN.IO • Privacy • Terms • Support
+</div>
+
+</body>
+</html>
