@@ -1,27 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RIFFAN.IO - République du Rif 1923</title>
+<meta name="viewport" content="width=device-width">
+<title>RIFFAN.IO</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#a00a0a;color:#ffd700;font-family:Arial, sans-serif;overflow-x:hidden}
+body{margin:0;background:#8b0000;color:#ffd700;font-family:Arial;text-align:center}
+.ticker{background:#000;border:2px solid #ffd700;padding:8px 0;overflow:hidden;white-space:nowrap}
+.track{display:inline-block;animation:move 25s linear infinite}
+@keyframes move{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
+.hero{padding:30px 15px}
+.coin{width:200px;height:200px;background:radial-gradient(#ffef8a,#d4af37);border-radius:50%;margin:20px auto;border:4px solid #ffd700;display:flex;align-items:center;justify-content:center;font-size:90px}
+.btn{background:#ffd700;color:#8b0000;padding:12px 30px;border-radius:25px;font-weight:900;border:none;font-size:18px;margin-top:20px}
+</style>
+</head>
+<body>
 
-/* الشريط اللي كيدوز من 1 حتى 10 */
-.ticker{background:#8b0000;border-top:2px solid #ffd700;border-bottom:2px solid #ffd700;padding:10px 0;white-space:nowrap;overflow:hidden}
-.ticker-track{display:inline-block;animation:scroll 40s linear infinite}
-@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.ticker span{margin:0 20px;font-weight:bold;font-size:14px}
-.up{color:#00ff88}
+<div class="ticker">
+<div class="track">
+1 BTC $107K ▲ | 2 ETH $3850 ▲ | 3 SOL $178 ▲ | 4 XRP $0.62 | 5 BNB $620 | 6 DOGE $0.15 | 7 ADA $0.45 | 8 AVAX $35 | 9 RIFFAN $0.00014 🔥 | 10 SHIB $0.00002 |
+1 BTC $107K ▲ | 2 ETH $3850 ▲ | 3 SOL $178 ▲ | 4 XRP $0.62 | 5 BNB $620 | 6 DOGE $0.15 | 7 ADA $0.45 | 8 AVAX $35 | 9 RIFFAN $0.00014 🔥 | 10 SHIB $0.00002 |
+</div>
+</div>
 
-/* الهيدر */
-.header{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:#7a0000;border-bottom:2px solid #ffd700}
-.logo{display:flex;align-items:center;gap:10px}
-.logo-circle{width:45px;height:45px;background:radial-gradient(#ffd700,#a67c00);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#7a0000;font-weight:900;border:2px solid #ffd700}
-.header h1{font-size:22px;letter-spacing:2px}
-.btn-gold{background:linear-gradient(#ffd700,#ffb700);color:#7a0000;border:none;padding:8px 20px;border-radius:20px;font-weight:900;cursor:pointer}
+<div class="hero">
+<h1>RIFFAN.IO</h1>
+<div class="coin">🐎</div>
+<h2>RÉPUBLIQUE DU RIF<br>1923</h2>
+<p>The Royal Crypto Republic</p>
+<button class="btn" onclick="window.open('https://odin.fun/token/hjcn','_blank')">TRADE $RIFFAN</button>
+<p style="margin-top:20px;font-size:14px">ASCENDED 11% → 100% | TVL $12.4M | PRICE $0.00014</p>
+</div>
 
-/* الوسط */
-.hero{text-align:center;padding:40px 20px;background:radial-gradient(circle at center,#b50e0e,#7a0000)}
-.hero h2{font-size:42px;margin:20px 0;text-shadow:2
+</body>
+</html>
