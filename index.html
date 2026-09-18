@@ -1,194 +1,1082 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#090a0f">
-
-<title>RIFFAN.IO</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08090d">
+<title>RIFFAN.IO — The Royal Crypto Republic</title>
 
 <style>
-*{
-box-sizing:border-box;
+:root{
+  --bg:#08090d;
+  --panel:#11131a;
+  --line:#292c36;
+  --gold:#d8b45b;
+  --cyan:#00e5ea;
+  --green:#19d66b;
+  --muted:#8e929f;
 }
 
-html{
-scroll-behavior:smooth;
+*{box-sizing:border-box}
+
+html,body{
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-margin:0;
-background:#090a0f;
-color:#fff;
-font-family:Arial,Helvetica,sans-serif;
+  min-height:100vh;
 }
 
 a{
-color:inherit;
-text-decoration:none;
+  text-decoration:none;
+  color:inherit;
 }
 
 /* HEADER */
 
 .header{
-position:sticky;
-top:0;
-z-index:10;
-background:#090a0f;
-border-bottom:1px solid #292b35;
+  border-bottom:1px solid var(--line);
+  background:#08090d;
 }
 
 .nav{
-max-width:1200px;
-margin:auto;
-padding:13px 18px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:12px;
+  max-width:1150px;
+  margin:auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:20px;
+  font-weight:900;
+  letter-spacing:2px;
 }
 
 .logo{
-display:flex;
-align-items:center;
-gap:10px;
-font-weight:900;
-letter-spacing:2px;
-font-size:20px;
-}
-
-.logo-mark{
-width:44px;
-height:44px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-background:linear-gradient(145deg,#9c0000,#280000);
-border:2px solid #d8b45b;
-font-size:22px;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:linear-gradient(145deg,#a60000,#360000);
+  border:2px solid var(--gold);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:25px;
 }
 
 .trade{
-background:#00e5ea;
-color:#041014;
-font-weight:900;
-padding:13px 18px;
-border-radius:14px;
+  background:var(--cyan);
+  color:#001114;
+  padding:13px 18px;
+  border-radius:14px;
+  font-weight:900;
 }
 
 /* TICKER */
 
 .ticker{
-height:50px;
-overflow:hidden;
-background:#050609;
-border-bottom:1px solid #292b35;
-display:flex;
-align-items:center;
+  overflow:hidden;
+  border-bottom:1px solid var(--line);
+  background:#050609;
 }
 
-.track{
-display:flex;
-white-space:nowrap;
-animation:move 32s linear infinite;
+.ticker-track{
+  display:flex;
+  width:max-content;
+  animation:scroll 35s linear infinite;
 }
 
-.tick{
-padding:0 22px;
-border-right:1px solid #292b35;
-font-size:13px;
+.item{
+  padding:15px 22px;
+  border-right:1px solid var(--line);
+  font-size:13px;
 }
 
 .up{
-color:#17d56b;
+  color:var(--green);
 }
 
-.down{
-color:#ff6868;
+@keyframes scroll{
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(-50%);
+  }
 }
 
-@keyframes move{
-from{
-transform:translateX(0);
-}
-to{
-transform:translateX(-50%);
-}
+/* MAIN */
+
+.wrap{
+  max-width:1150px;
+  margin:auto;
+  padding:0 18px;
 }
 
 /* HERO */
 
 .hero{
-max-width:1200px;
-margin:auto;
-padding:55px 20px 35px;
-display:grid;
-grid-template-columns:1.1fr .9fr;
-gap:30px;
-align-items:center;
+  display:grid;
+  grid-template-columns:1fr 380px;
+  gap:35px;
+  align-items:center;
+  padding:60px 0 45px;
 }
 
 .badge{
-display:inline-block;
-border:1px solid #967633;
-color:#e3c36d;
-border-radius:30px;
-padding:9px 15px;
-letter-spacing:1.5px;
-font-size:12px;
+  display:inline-block;
+  border:1px solid #856a31;
+  color:var(--gold);
+  border-radius:30px;
+  padding:9px 15px;
+  font-size:12px;
+  letter-spacing:1.5px;
 }
 
 h1{
-font-size:clamp(55px,9vw,90px);
-margin:20px 0 8px;
-line-height:.9;
-letter-spacing:-4px;
+  font-size:clamp(58px,10vw,100px);
+  line-height:.9;
+  letter-spacing:-5px;
+  margin:22px 0 12px;
 }
 
 .hero h2{
-font-size:30px;
-font-weight:500;
-margin:0;
-color:#d5d6dc;
+  font-size:30px;
+  font-weight:500;
+  color:#d5d7df;
+  margin:0 0 18px;
 }
 
 .hero p{
-color:#9295a2;
-line-height:1.7;
-max-width:620px;
+  color:var(--muted);
+  line-height:1.7;
+  max-width:650px;
 }
 
 .buttons{
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-margin-top:22px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:25px;
 }
 
 .btn{
-padding:14px 20px;
-border-radius:13px;
-font-weight:900;
-display:inline-block;
+  display:inline-block;
+  padding:14px 19px;
+  border-radius:13px;
+  font-weight:900;
 }
 
-.main{
-background:#00e5ea;
-color:#041014;
+.primary{
+  background:var(--cyan);
+  color:#001114;
 }
 
-.secondary{
-border:1px solid #454751;
+.outline{
+  border:1px solid #444854;
 }
 
 /* COIN */
 
 .coinbox{
-min-height:330px;
-border:1px solid #4a3920;
-border-radius:26px;
-display:grid;
-place-items:center;
-background:
-radial-gradient(
+  height:350px;
+  border:1px solid #4e3b1e;
+  border-radius:28px;
+  background:
+    radial-gradient(
+      circle,
+      rgba(216,180,91,.16),
+      transparent 48%
+    ),
+    #12090b;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.coin{
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  border:8px double var(--gold);
+  background:
+    radial-gradient(
+      circle at 35% 25%,
+      #b52a2a,
+      #690808 52%,
+      #230202
+    );
+  box-shadow:
+    0 0 50px rgba(216,180,91,.18);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.coin .horse{
+  font-size:76px;
+}
+
+.coin b{
+  font-size:12px;
+  letter-spacing:3px;
+  color:#f0d27b;
+}
+
+/* STATS */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  padding-bottom:35px;
+}
+
+.card,
+.tablebox,
+.news-card,
+.riffan{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:17px;
+}
+
+.card{
+  padding:18px;
+}
+
+.card small{
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.card strong{
+  display:block;
+  font-size:23px;
+  margin-top:8px;
+}
+
+.cyan{
+  color:var(--cyan);
+}
+
+.green{
+  color:var(--green);
+}
+
+.gold{
+  color:var(--gold);
+}
+
+/* SECTIONS */
+
+section{
+  padding:20px 0 50px;
+}
+
+h2.section-title{
+  font-size:30px;
+  margin:0 0 5px;
+}
+
+.muted{
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:18px;
+}
+
+/* TABLE */
+
+.tablebox{
+  overflow:auto;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:650px;
+}
+
+th,
+td{
+  padding:15px;
+  border-bottom:1px solid #242730;
+  text-align:left;
+}
+
+th{
+  color:var(--muted);
+  font-size:11px;
+  text-transform:uppercase;
+}
+
+.right{
+  text-align:right;
+}
+
+/* RIFFAN */
+
+.riffan{
+  padding:22px;
+  border-color:#59451f;
+  background:
+    linear-gradient(
+      135deg,
+      #190b0b,
+      #101118
+    );
+}
+
+.rhead{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.rname{
+  font-size:25px;
+  font-weight:900;
+}
+
+.rgrid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
+  margin-top:18px;
+}
+
+.ritem{
+  background:#0b0d12;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:14px;
+}
+
+.ritem small{
+  color:#777c89;
+}
+
+.ritem b{
+  display:block;
+  margin-top:7px;
+}
+
+/* NEWS */
+
+.news{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:13px;
+}
+
+.news-card{
+  padding:20px;
+}
+
+.tag{
+  color:var(--cyan);
+  font-size:11px;
+  font-weight:900;
+}
+
+.news-card h3{
+  line-height:1.35;
+}
+
+.news-card p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.6;
+}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid var(--line);
+  padding:30px 18px;
+  text-align:center;
+  color:#777c89;
+  font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  .hero{
+    grid-template-columns:1fr;
+    padding-top:40px;
+  }
+
+  .coinbox{
+    height:280px;
+  }
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .rgrid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .news{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:480px){
+
+  .nav{
+    padding:11px 13px;
+  }
+
+  .brand{
+    font-size:16px;
+  }
+
+  .logo{
+    width:40px;
+    height:40px;
+  }
+
+  .trade{
+    padding:12px 14px;
+  }
+
+  .wrap{
+    padding:0 14px;
+  }
+
+  h1{
+    font-size:62px;
+  }
+
+  .hero h2{
+    font-size:24px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+  <div class="nav">
+
+    <a class="brand" href="#">
+
+      <span class="logo">
+        🐎
+      </span>
+
+      <span>
+        RIFFAN.IO
+      </span>
+
+    </a>
+
+    <a
+      class="trade"
+      href="https://odin.fun/token/hjcn"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      TRADE ↗
+    </a>
+
+  </div>
+
+</header>
+
+
+<!-- TOP CRYPTO TICKER -->
+
+<div class="ticker">
+
+  <div class="ticker-track">
+
+    <span class="item">
+      1 BTC <b>$107,000</b>
+      <span class="up">▲ 2.1%</span>
+    </span>
+
+    <span class="item">
+      2 ETH <b>$3,850</b>
+      <span class="up">▲ 1.8%</span>
+    </span>
+
+    <span class="item">
+      3 USDT <b>$1.00</b>
+    </span>
+
+    <span class="item">
+      4 BNB <b>$1,000</b>
+      <span class="up">▲ 0.8%</span>
+    </span>
+
+    <span class="item">
+      5 XRP <b>$2.50</b>
+      <span class="up">▲ 1.1%</span>
+    </span>
+
+    <span class="item">
+      6 USDC <b>$1.00</b>
+    </span>
+
+    <span class="item">
+      7 SOL <b>$210</b>
+      <span class="up">▲ 2.2%</span>
+    </span>
+
+    <span class="item">
+      8 TRX <b>$0.35</b>
+      <span class="up">▲ 0.5%</span>
+    </span>
+
+    <span class="item">
+      9 DOGE <b>$0.25</b>
+      <span class="up">▲ 1.0%</span>
+    </span>
+
+    <span class="item">
+      10 ADA <b>$0.80</b>
+      <span class="up">▲ 0.7%</span>
+    </span>
+
+
+    <!-- DUPLICATE FOR SMOOTH ANIMATION -->
+
+    <span class="item">
+      1 BTC <b>$107,000</b>
+      <span class="up">▲ 2.1%</span>
+    </span>
+
+    <span class="item">
+      2 ETH <b>$3,850</b>
+      <span class="up">▲ 1.8%</span>
+    </span>
+
+    <span class="item">
+      3 USDT <b>$1.00</b>
+    </span>
+
+    <span class="item">
+      4 BNB <b>$1,000</b>
+      <span class="up">▲ 0.8%</span>
+    </span>
+
+    <span class="item">
+      5 XRP <b>$2.50</b>
+      <span class="up">▲ 1.1%</span>
+    </span>
+
+    <span class="item">
+      6 USDC <b>$1.00</b>
+    </span>
+
+    <span class="item">
+      7 SOL <b>$210</b>
+      <span class="up">▲ 2.2%</span>
+    </span>
+
+    <span class="item">
+      8 TRX <b>$0.35</b>
+      <span class="up">▲ 0.5%</span>
+    </span>
+
+    <span class="item">
+      9 DOGE <b>$0.25</b>
+      <span class="up">▲ 1.0%</span>
+    </span>
+
+    <span class="item">
+      10 ADA <b>$0.80</b>
+      <span class="up">▲ 0.7%</span>
+    </span>
+
+  </div>
+
+</div>
+
+
+<main class="wrap">
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div>
+
+    <span class="badge">
+      RÉPUBLIQUE DU RIF • 1923
+    </span>
+
+    <h1>
+      RIFFAN
+    </h1>
+
+    <h2>
+      The Royal Crypto Republic
+    </h2>
+
+    <p>
+      Bienvenue sur RIFFAN.IO —
+      découvrez <b>$RIFFAN</b>,
+      suivez le marché crypto et
+      accédez directement au token
+      sur Odin.fun.
+    </p>
+
+    <div class="buttons">
+
+      <a
+        class="btn primary"
+        href="https://odin.fun/token/hjcn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ↗ TRADE $RIFFAN
+      </a>
+
+      <a
+        class="btn outline"
+        href="#market"
+      >
+        VOIR LE MARCHÉ ↓
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- COIN -->
+
+  <div class="coinbox">
+
+    <div class="coin">
+
+      <div class="horse">
+        🐎
+      </div>
+
+      <b>
+        RIFFAN • 1923
+      </b>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- STATS -->
+
+<div class="stats">
+
+  <div class="card">
+
+    <small>
+      RIFFAN Price
+    </small>
+
+    <strong>
+      $0.00014
+    </strong>
+
+  </div>
+
+
+  <div class="card">
+
+    <small>
+      Price
+    </small>
+
+    <strong class="gold">
+      0.178 sats
+    </strong>
+
+  </div>
+
+
+  <div class="card">
+
+    <small>
+      Ascended
+    </small>
+
+    <strong class="cyan">
+      11%
+    </strong>
+
+  </div>
+
+
+  <div class="card">
+
+    <small>
+      24H
+    </small>
+
+    <strong class="green">
+      +1.10%
+    </strong>
+
+  </div>
+
+</div>
+
+
+<!-- MARKET -->
+
+<section id="market">
+
+  <h2 class="section-title">
+    Top 10 Crypto
+  </h2>
+
+  <div class="muted">
+    Prix du marché • affichage immédiat
+  </div>
+
+
+  <div class="tablebox">
+
+    <table>
+
+      <thead>
+
+        <tr>
+
+          <th>
+            #
+          </th>
+
+          <th>
+            Coin
+          </th>
+
+          <th class="right">
+            Prix USD
+          </th>
+
+          <th>
+            24H
+          </th>
+
+          <th>
+            Market Cap
+          </th>
+
+        </tr>
+
+      </thead>
+
+
+      <tbody>
+
+        <tr>
+          <td>1</td>
+          <td><b>BTC</b> · Bitcoin</td>
+          <td class="right">$107,000</td>
+          <td class="green">▲ 2.10%</td>
+          <td>$2.10T</td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td><b>ETH</b> · Ethereum</td>
+          <td class="right">$3,850</td>
+          <td class="green">▲ 1.80%</td>
+          <td>$450B</td>
+        </tr>
+
+        <tr>
+          <td>3</td>
+          <td><b>USDT</b> · Tether</td>
+          <td class="right">$1.00</td>
+          <td class="green">▲ 0.01%</td>
+          <td>$160B</td>
+        </tr>
+
+        <tr>
+          <td>4</td>
+          <td><b>BNB</b> · BNB</td>
+          <td class="right">$1,000</td>
+          <td class="green">▲ 0.80%</td>
+          <td>$140B</td>
+        </tr>
+
+        <tr>
+          <td>5</td>
+          <td><b>XRP</b> · XRP</td>
+          <td class="right">$2.50</td>
+          <td class="green">▲ 1.10%</td>
+          <td>$145B</td>
+        </tr>
+
+        <tr>
+          <td>6</td>
+          <td><b>USDC</b> · USDC</td>
+          <td class="right">$1.00</td>
+          <td>0.00%</td>
+          <td>$60B</td>
+        </tr>
+
+        <tr>
+          <td>7</td>
+          <td><b>SOL</b> · Solana</td>
+          <td class="right">$210</td>
+          <td class="green">▲ 2.20%</td>
+          <td>$100B</td>
+        </tr>
+
+        <tr>
+          <td>8</td>
+          <td><b>TRX</b> · TRON</td>
+          <td class="right">$0.35</td>
+          <td class="green">▲ 0.50%</td>
+          <td>$33B</td>
+        </tr>
+
+        <tr>
+          <td>9</td>
+          <td><b>DOGE</b> · Dogecoin</td>
+          <td class="right">$0.25</td>
+          <td class="green">▲ 1.00%</td>
+          <td>$37B</td>
+        </tr>
+
+        <tr>
+          <td>10</td>
+          <td><b>ADA</b> · Cardano</td>
+          <td class="right">$0.80</td>
+          <td class="green">▲ 0.70%</td>
+          <td>$30B</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</section>
+
+
+<!-- RIFFAN -->
+
+<section>
+
+  <div class="riffan">
+
+    <div class="rhead">
+
+      <div>
+
+        <div class="rname">
+          🐎 $RIFFAN
+        </div>
+
+        <div class="muted">
+          RÉPUBLIQUE DU RIF 1923 • Odin.fun
+        </div>
+
+      </div>
+
+
+      <a
+        class="btn primary"
+        href="https://odin.fun/token/hjcn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        OPEN ODIN ↗
+      </a>
+
+    </div>
+
+
+    <div class="rgrid">
+
+      <div class="ritem">
+
+        <small>
+          PRICE USD
+        </small>
+
+        <b>
+          $0.00014
+        </b>
+
+      </div>
+
+
+      <div class="ritem">
+
+        <small>
+          PRICE
+        </small>
+
+        <b>
+          0.178 sats
+        </b>
+
+      </div>
+
+
+      <div class="ritem">
+
+        <small>
+          ASCENDED
+        </small>
+
+        <b class="cyan">
+          11%
+        </b>
+
+      </div>
+
+
+      <div class="ritem">
+
+        <small>
+          24H
+        </small>
+
+        <b class="green">
+          +1.10%
+        </b>
+
+      </div>
+
+
+      <div class="ritem">
+
+        <small>
+          STATUS
+        </small>
+
+        <b class="gold">
+          LIVE
+        </b>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- NEWS -->
+
+<section>
+
+  <h2 class="section-title">
+    Latest News
+  </h2>
+
+  <div class="muted">
+    Crypto news & RIFFAN updates
+  </div>
+
+
+  <div class="news">
+
+
+    <article class="news-card">
+
+      <div class="tag">
+        RIFFAN
+      </div>
+
+      <h3>
+        $RIFFAN sur Odin.fun
+      </h3>
+
+      <p>
+        Le bouton Trade ouvre directement
+        la page du token.
+      </p>
+
+    </article>
+
+
+    <article class="news-card">
+
+      <div class="tag">
+        MARKET
+      </div>
+
+      <h3>
+        Top 10 Crypto
+      </h3>
+
+      <p>
+        Bitcoin, Ethereum, Solana et
+        plusieurs grandes crypto sont affichées.
+      </p>
+
+    </article>
+
+
+    <article class="news-card">
+
+      <div class="tag">
+        UPDATE
+      </div>
+
+      <h3>
+        RIFFAN.IO
+      </h3>
+
+      <p>
+        Dashboard crypto officiel de
+        la Royal Crypto Republic.
+      </p>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  © 2026 RIFFAN.IO
+  •
+  RÉPUBLIQUE DU RIF 1923
+  •
+  The Royal Crypto Republic
+
+</footer>
+
+</body>
+</html>
