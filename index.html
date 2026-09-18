@@ -3,50 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RIFFAN MOUNTAIN RACE - Rif to the Moon</title>
+<title>RIFFAN.IO - THE FIRST RIF COIN</title>
 <style>
-body{margin:0;background:#0a1931;color:#fff;font-family:monospace;text-align:center;overflow:hidden}
-#hud{display:flex;justify-content:space-around;background:#1a2f6b;padding:8px;font-weight:bold;color:#ffd700}
-canvas{display:block;margin:0 auto;background:#3a7d2e;max-width:100vw}
-#ctrl{position:fixed;bottom:10px;left:0;right:0;display:flex;justify-content:space-between;padding:0 20px}
-.btn{width:80px;height:80px;background:#ffffff33;border:2px solid #fff;border-radius:50%;font-size:30px;display:flex;align-items:center;justify-content:center;user-select:none}
-h1{margin:5px;color:#ffd700}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#fff;font-family: -apple-system, BlinkMacSystemFont, sans-serif;display:flex;justify-content:center;min-height:100vh}
+.phone{width:390px;background:#0e0e0e;border:1px solid #222;min-height:100vh;position:relative}
+.top-ticker{background:#e5c07b;color:#000;font-weight:900;padding:12px 15px;font-size:20px;display:flex;justify-content:space-between;align-items:center}
+.logo-wrap{display:flex;justify-content:center;padding:30px 0 20px}
+.logo{width:220px;height:220px;background:radial-gradient(circle,#5a1a1a,#000);border:6px solid #c9a86a;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px #c9a86a66;position:relative}
+.logo::after{content:"🐎";font-size:80px}
+.brand{text-align:center;padding:10px}
+.brand h1{color:#e5c07b;font-size:36px;letter-spacing:2px}
+.brand p{color:#e5c07b88;font-size:12px;margin-top:5px;letter-spacing:1px;font-weight:bold}
+.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:20px}
+.stat{background:#1a1a1a;border:1px solid #c9a86a55;border-radius:8px;padding:12px;text-align:center}
+.stat label{font-size:9px;color:#888;display:block;margin-bottom:5px}
+.stat b{color:#e5c07b;font-size:18px;display:block}
+.stat span{color:#22c55e;font-size:11px}
+.news{padding:0 15px}
+.news h3{color:#c9a86a;font-size:12px;margin:20px 0 10px;letter-spacing:1px}
+.card{background:#1a1a1a;border-left:4px solid #ef4444;border-radius:8px;padding:15px;margin-bottom:10px;position:relative}
+.card.green{border-left-color:#22c55e}
+.card h4{font-size:14px;margin-bottom:5px}
+.card p{font-size:11px;color:#888}
+.badge{position:absolute;top:10px;right:10px;font-size:9px;padding:3px 8px;border-radius:10px;font-weight:bold}
+.hot{background:#ef4444;color:#fff} .update{background:#22c55e;color:#000}
+.buy{margin:20px 15px 30px;background:linear-gradient(#e5c07b,#c9a86a);color:#000;font-weight:900;padding:16px;border-radius:12px;text-align:center;font-size:18px;cursor:pointer;display:block;text-decoration:none}
+.buy:active{transform:scale(0.98)}
 </style>
 </head>
 <body>
-<h1>🏔️ RIFFAN RACE 🏎️</h1>
-<div id="hud"><span id="riff">RIFF: 0</span><span>COIN x<span id="coin">0</span></span><span id="best">BEST: 0</span></div>
-<canvas id="g" width="400" height="600"></canvas>
-<div id="ctrl"><div class="btn" id="L">◀</div><div class="btn" id="R">▶</div></div>
-<script>
-const c=document.getElementById('g'),x=c.getContext('2d');
-let car={x:180,y:500,w:40,h:60}, coins=[], score=0, best=localStorage.getItem('riff_best')||0, keys={}, speed=4;
-document.getElementById('best').innerText='BEST: '+best;
-function spawn(){coins.push({x:Math.random()*340+10,y:-30})}
-setInterval(spawn,600);
-function loop(){
- x.fillStyle='#555'; x.fillRect(0,0,400,600);
- x.fillStyle='#333'; x.fillRect(60,0,280,600);
- x.strokeStyle='#ff0'; x.setLineDash([20,20]); x.beginPath(); x.moveTo(200,0); x.lineTo(200,600); x.stroke(); x.setLineDash([]);
- if(keys['ArrowLeft']||keys['a']||L) car.x=Math.max(60,car.x-6);
- if(keys['ArrowRight']||keys['d']||R) car.x=Math.min(300,car.x+6);
- x.fillStyle='#ff2222'; x.fillRect(car.x,car.y,car.w,car.h);
- x.fillStyle='#ffd700'; x.fillRect(car.x+5,car.y-5,30,12); x.fillStyle='#000'; x.font='12px monospace'; x.fillText('RIFF',car.x+6,car.y+3);
- for(let i=coins.length-1;i>=0;i--){
-  let co=coins[i]; co.y+=speed;
-  x.fillStyle='#ffd700'; x.beginPath(); x.arc(co.x,co.y,14,0,Math.PI*2); x.fill();
-  x.fillStyle='#000'; x.font='bold 14px monospace'; x.fillText('R',co.x-5,co.y+4);
-  if(co.x>car.x && co.x<car.x+car.w && co.y>car.y && co.y<car.y+car.h){coins.splice(i,1); score++; document.getElementById('riff').innerText='RIFF: '+score; document.getElementById('coin').innerText=score; if(score>best){best=score; localStorage.setItem('riff_best',best); document.getElementById('best').innerText='BEST: '+best;}}
-  if(co.y>620) coins.splice(i,1);
- }
- requestAnimationFrame(loop);
-}
-let L=false,R=false;
-document.getElementById('L').ontouchstart=()=>L=true; document.getElementById('L').ontouchend=()=>L=false;
-document.getElementById('R').ontouchstart=()=>R=true; document.getElementById('R').ontouchend=()=>R=false;
-window.onkeydown=e=>keys[e.key]=true; window.onkeyup=e=>keys[e.key]=false;
-loop();
-</script>
-<p style="font-size:12px">RIFFAN on odin.fun - 0.18 sats - Rif Mountains Morocco</p>
+<div class="phone">
+<div class="top-ticker"><span>1. RIFFAN • $0.00013</span><span style="font-size:14px">LIVE</span></div>
+<div class="logo-wrap"><div class="logo"></div></div>
+<div class="brand"><h1>RIFFAN.IO</h1><p>THE FIRST RIF COIN • EST 1923 • ON BITCOIN</p></div>
+<div class="stats">
+<div class="stat"><label>MARKET CAP</label><b>$1.24M</b><span>+12.4%</span></div>
+<div class="stat"><label>24H VOLUME</label><b>$342K</b><span>+8.2%</span></div>
+<div class="stat"><label>HOLDERS</label><b>3,421</b><span>+27 TODAY</span></div>
+</div>
+<div class="news">
+<h3>LATEST NEWS</h3>
+<div class="card"><span class="badge hot">HOT</span><h4>Listing on DEX Live Now</h4><p>Trading now live on Uniswap • 2 hours ago</p></div>
+<div class="card green"><span class="badge update">UPDATE</span><h4>Community Vote: Treasury Proposal Passed</h4><p>Proposal #12 approved by 89% • Yesterday</p></div>
+</div>
+<a class="buy" href="https://odin.fun" target="_blank">BUY RIFFAN</a>
+</div>
 </body>
 </html>
