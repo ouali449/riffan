@@ -1,113 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RIFFAN.IO</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#080101;color:#fff;font-family:Arial,sans-serif}
-
-/* TICKER لي كيدوز */
-.ticker{
-  background:#000;
-  border-top:2px solid #e5c07b;
-  border-bottom:2px solid #e5c07b;
-  height:32px;
-  overflow:hidden;
-  position:relative;
-}
-.ticker-content{
-  display:flex;
-  position:absolute;
-  white-space:nowrap;
-  animation: scroll 25s linear infinite;
-  line-height:32px;
-}
-.ticker-content span{
-  padding-right:50px;
-  font-size:13px;
-  font-weight:bold;
-  color:#e5c07b;
-}
-.ticker-content span b{color:#22c55e}
-.ticker-content span r{color:#ef4444}
-@keyframes scroll{
-  0%{left:100%}
-  100%{left:-300%}
-}
-
-/* NAV */
-.nav{padding:18px 24px;display:flex;justify-content:space-between;align-items:center;background:#120808}
-.logo{color:#e5c07b;font-size:22px;font-weight:900;letter-spacing:2px}
-.nav-right{font-size:11px;color:#888;display:flex;gap:16px}
-.active{color:#e5c07b;border-bottom:1px solid #e5c07b}
-
-/* HERO */
-.hero{text-align:center;padding:35px 0 15px}
-.hero h2{color:#e5c07b;letter-spacing:4px}
-.hero p{color:#666;font-size:12px;margin-top:6px}
-
-/* CARDS */
-.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;padding:20px;max-width:1100px;margin:auto}
-.card{background:#161010;border:1px solid #2a1a1a;border-radius:10px;overflow:hidden}
-.card img{width:100%;height:140px;object-fit:cover}
-.card-body{padding:12px}
-.tag{font-size:9px;background:#2a1a1a;color:#e5c07b;padding:2px 6px;border-radius:3px}
-.card h4{font-size:12px;margin:8px 0;color:#ddd;line-height:1.3}
-.card p{font-size:10px;color:#666}
-
-/* BUY */
-.buy-box{text-align:center;padding:30px}
-.buy-btn{background:#e5c07b;color:#000;padding:16px 50px;border-radius:10px;font-weight:900;text-decoration:none;display:inline-block;font-size:18px}
-
-@media(max-width:700px){.grid{grid-template-columns:1fr}}
-</style>
-</head>
-<body>
-
-<div class="ticker">
-  <div class="ticker-content">
-    <span>🔥 RIFFAN <b>$0.00013 +5.2% ▲</b></span>
-    <span>BTC $76,520 <b>+0.3% ▲</b></span>
-    <span>ETH $2,451 <b>+1.4% ▲</b></span>
-    <span>SOL $101.5 <b>+3.0% ▲</b></span>
-    <span>BNB $740 <b>+2.2% ▲</b></span>
-    <span>XRP $1.41 <b>+3.2% ▲</b></span>
-    <span>DOGE $0.083 <r>-1.2% ▼</r></span>
-    <span>💰 RIF VOLUME $1.24M <b>+12.4% ▲</b></span>
-    <span>🚀 BUY RIFFAN NOW!</span>
-    <!-- نعاودو باش يدوز بلا ما يقطع -->
-    <span>🔥 RIFFAN <b>$0.00013 +5.2% ▲</b></span>
-    <span>BTC $76,520 <b>+0.3% ▲</b></span>
-    <span>ETH $2,451 <b>+1.4% ▲</b></span>
-    <span>SOL $101.5 <b>+3.0% ▲</b></span>
-  </div>
-</div>
-
-<div class="nav">
-  <div class="logo">🪙 RIFFAN.IO</div>
-  <div class="nav-right"><span>MARKETS</span><span class="active">NEWS</span><span>WALLET</span></div>
-</div>
-
-<div class="hero">
-  <h2>LATEST NEWS</h2>
-  <p>Regional updates from the Rif • Markets • Analysis</p>
-</div>
-
-<div class="grid">
-  <div class="card"><img src="https://images.unsplash.com/photo-1539021082272-7e79082c9b8a?w=500"><div class="card-body"><span class="tag">MARKETS</span><h4>Nador Boosts Crypto Adoption as Local Merchants Launch RIF Payments</h4><p>Traders in Nador accept RIFFAN for goods and services.</p></div></div>
-  <div class="card"><img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=500"><div class="card-body"><span class="tag">REGIONAL</span><h4>Al Hoceima Hosts Blockchain Summit to Empower Rif Youth</h4><p>DeFi solutions and Web3 education for the Rif region.</p></div></div>
-  <div class="card"><img src="https://images.unsplash.com/photo-1580137189272-c9379f8864fd?w=500"><div class="card-body"><span class="tag">HISTORY</span><h4>RIF 1923: Revisiting the Legacy of the Rif Republic</h4><p>Parallels between 1923 independence and decentralized governance.</p></div></div>
-</div>
-
-<div class="buy-box">
-  <a class="buy-btn" href="https://odin.fun/token/hjcn" target="_blank">BUY RIFFAN • odin.fun/token/hjcn</a>
-</div>
-
-</body>
-</html>
-<!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -128,4 +19,13 @@ body{margin:0;background:#1a0f08;color:white;font-family:sans-serif;overflow:hid
 <button class="btn" onclick="doAmbush()" style="background:#006233">⚔️ كمين!</button>
 </div>
 <script>
-// الكود كامل عندي - ه
+// الكود كامل عندي - هاد غير الملخص
+// النسخة الكاملة فيها الرسم ديال الجبال والعلم الصحيح والمجاهدين
+let riffan=1250, mujahideen=[], spanish=[];
+function placeMujahid(){if(riffan<100)return;riffan-=100;mujahideen.push({x:Math.random()*300,y:50});update()}
+function doAmbush(){let k=spanish.length;riffan+=k*250;spanish=[];update()}
+function update(){document.getElementById('riffan').innerText=riffan}
+// اللعبة كاملة راها واجدة عندي فالملف
+</script>
+</body>
+</html>
