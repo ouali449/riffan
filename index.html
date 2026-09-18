@@ -4,201 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RIFFAN.IO — The Royal Crypto Republic</title>
-
 <style>
-:root{
-  --bg:#08090d;
-  --panel:#11131a;
-  --line:#292c36;
-  --gold:#d8b45b;
-  --cyan:#00e5ea;
-  --green:#19d66b;
-  --red:#ff4d5a;
-  --muted:#8e929f
-}
-
+:root{--bg:#08090d;--panel:#11131a;--line:#292c36;--gold:#d8b45b;--cyan:#00e5ea;--green:#19d66b;--red:#ff4d5a;--muted:#8e929f}
 *{box-sizing:border-box}
-
-html,body{
-  margin:0;
-  padding:0;
-  background:var(--bg);
-  color:#fff;
-  font-family:Arial,Helvetica,sans-serif
-}
-
+html,body{margin:0;padding:0;background:var(--bg);color:#fff;font-family:Arial,Helvetica,sans-serif}
 body{min-height:100vh}
-
-a{
-  text-decoration:none;
-  color:inherit
-}
-
-.header{
-  border-bottom:1px solid var(--line);
-  background:#08090d
-}
-
-.nav{
-  max-width:1150px;
-  margin:auto;
-  padding:14px 18px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-size:20px;
-  font-weight:900;
-  letter-spacing:2px
-}
-
-.logo{
-  width:46px;
-  height:46px;
-  border-radius:50%;
-  background:linear-gradient(145deg,#a60000,#360000);
-  border:2px solid var(--gold);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:25px
-}
-
-.trade{
-  background:var(--cyan);
-  color:#001114;
-  padding:13px 18px;
-  border-radius:14px;
-  font-weight:900
-}
-
-.ticker{
-  overflow:hidden;
-  border-bottom:1px solid var(--line);
-  background:#050609
-}
-
-.ticker-track{
-  display:flex;
-  width:max-content;
-  animation:scroll 35s linear infinite
-}
-
-.item{
-  padding:15px 22px;
-  border-right:1px solid var(--line);
-  font-size:13px;
-  white-space:nowrap
-}
-
-.item b{
-  margin-left:4px
-}
-
-.green{
-  color:var(--green)
-}
-
-@keyframes scroll{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
-}
-
-.wrap{
-  max-width:1150px;
-  margin:auto;
-  padding:0 18px
-}
-
-.hero{
-  display:grid;
-  grid-template-columns:1fr 380px;
-  gap:35px;
-  align-items:center;
-  padding:60px 0 45px
-}
-
-.badge{
-  display:inline-block;
-  border:1px solid #856a31;
-  color:var(--gold);
-  border-radius:30px;
-  padding:9px 15px;
-  font-size:12px;
-  letter-spacing:1.5px
-}
-
-h1{
-  font-size:clamp(58px,10vw,100px);
-  line-height:.9;
-  letter-spacing:-5px;
-  margin:22px 0 12px
-}
-
-.hero h2{
-  font-size:30px;
-  font-weight:500;
-  color:#d5d7df;
-  margin:0 0 18px
-}
-
-.hero p{
-  color:var(--muted);
-  line-height:1.7;
-  max-width:650px
-}
-
-.buttons{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:25px
-}
-
-.btn{
-  display:inline-block;
-  padding:14px 19px;
-  border-radius:13px;
-  font-weight:900
-}
-
-.primary{
-  background:var(--cyan);
-  color:#001114
-}
-
-.outline{
-  border:1px solid #444854
-}
-
-.coinbox{
-  height:350px;
-  border:1px solid #4e3b1e;
-  border-radius:28px;
-  background:
-    radial-gradient(
-      circle,
-      rgba(216,180,91,.16),
-      transparent 48%
-    ),
-    #12090b;
-  display:flex;
-  align-items:center;
-  justify-content:center
-}
-
-.coin{
-  width:220px;
-  height:220px;
-  border-radius:50%;
-  border:8px double var(--gold);
-  background:
-    radial-gradient(
-      circle at 35% 25%,
-      #b52a2a,
-      #
+a{text-decoration:none;color:inherit}
+.header{border-bottom:1px solid var(--line);background:#08090d;position:sticky;top:0;z-index:10}
+.nav{max-width:1150px;margin:auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:900;letter-spacing:2px}
+.logo{width:46px;height:46px;border-radius:50%;background:linear-gradient(145deg,#a60000,#360000);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:25px;overflow:hidden}
+.logo img{width:100%;height:100%;object-fit:cover}
+.trade{background:var(--cyan);color:#001114;padding:13px 18px;border-radius:14px;font-weight:900}
+.ticker{overflow:hidden;border-bottom:1px solid var(--line);background:#050609}
+.ticker-track{display:flex;width:max-content;animation:scroll 35s linear infinite}
+.item{padding:15px 22px;border-right:1px solid var(--line);font-size:13px;white-space:nowrap}
+.item b{margin-left:4px}
+.green{color:var(--green)} .gold{color:var(--gold)} .cyan{color:var(--cyan)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.wrap{max-width:1150px;margin:auto;padding:0 18px}
+.hero{display:grid;grid-template-columns:1fr 380px;gap:35px;align-items:center;padding:60px 0 45px;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background:url
