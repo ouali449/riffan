@@ -1,100 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RIFFAN.IO - The Next-Gen Crypto Ecosystem</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RIFFAN.IO</title>
 <style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{background:#0c0505;color:#f0d9a0;font-family:Arial,sans-serif}
-  .header{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;background:#0f0705;border-bottom:1px solid #2a1a10;position:sticky;top:0;z-index:10}
-  .logo{display:flex;align-items:center;gap:12px;color:#e8c07a;font-weight:800;letter-spacing:2px;font-size:19px}
-  .logo-circle{width:50px;height:50px;border:1px solid #e8c07a;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#000}
-  .logo-circle svg{width:40px;height:40px}
-  .buy-btn{background:#e8c07a;color:#000;padding:10px 26px;border-radius:8px;font-weight:800;text-decoration:none}
-  
-  /* التيكر اللي كيدوز */
-  .ticker{overflow:hidden;white-space:nowrap;background:#140a06;border-bottom:1px solid #e8c07a;padding:12px 0;color:#e8c07a;font-size:12px}
-  .ticker-track{display:inline-block;white-space:nowrap;animation: scroll 30s linear infinite}
-  .ticker-track span{margin-right:50px}
-  .green{color:#5aff8a}
-  .red{color:#ff6a6a}
-  @keyframes scroll{0%{transform:translateX(0%)}100%{transform:translateX(-50%)}}
-
-  .hero{text-align:center;padding:60px 20px 30px}
-  .hero h1{font-size:38px;color:#e8c07a;font-family:serif;font-weight:300;line-height:1.1}
-  .hero p{color:#c9b99f;margin:16px auto;max-width:600px;font-size:14px}
-  .buttons{margin-top:22px;display:flex;gap:14px;justify-content:center}
-  .btn1{background:#e8c07a;color:#000;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700}
-  .btn2{border:1px solid #e8c07a;color:#e8c07a;padding:12px 24px;border-radius:8px;text-decoration:none}
-  .news{padding:26px 22px;max-width:1100px;margin:auto}
-  .news h2{color:#e8c07a;font-size:16px;margin-bottom:16px;border-bottom:1px solid #e8c07a;display:inline-block;padding-bottom:5px}
-  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-  .card{background:#17100c;border:1px solid #3a2a1a;border-radius:12px;overflow:hidden}
-  .card img{width:100%;height:140px;object-fit:cover}
-  .card-info{padding:14px}
-  .date{background:#2a1a10;color:#e8c07a;font-size:10px;padding:4px 8px;border-radius:4px}
-  .card h3{font-size:14px;color:#e8c07a;margin:10px 0 6px}
-  .card p{font-size:12px;color:#9a8a7a}
-  .footer{text-align:center;padding:18px;color:#6a5a4a;font-size:11px;border-top:1px solid #1a100c;margin-top:30px}
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0c0505;color:#f0d9a0;font-family:Arial,sans-serif}
+.header{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;background:#0f0705;border-bottom:1px solid #2a1a10;position:sticky;top:0;z-index:10}
+.logo{display:flex;align-items:center;gap:12px;color:#e8c07a;font-weight:800;letter-spacing:2px;font-size:19px}
+.logo-circle{width:50px;height:50px;border:1px solid #e8c07a;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#000}
+.buy-btn{background:#e8c07a;color:#000;padding:10px 26px;border-radius:8px;font-weight:800;text-decoration:none}
+.ticker{overflow:hidden;white-space:nowrap;background:#140a06;border-bottom:1px solid #e8c07a;padding:12px 0;color:#e8c07a;font-size:13px;position:relative}
+.ticker-track{display:flex;gap:50px;animation:scroll 40s linear infinite;width:max-content}
+.ticker-track span{white-space:nowrap}
+.green{color:#5aff8a}.red{color:#ff6a6a}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.hero{text-align:center;padding:60px 20px 30px}.hero h1{font-size:36px;color:#e8c07a;font-family:serif;line-height:1.15}
+.hero p{color:#c9b99f;margin:16px auto;max-width:600px;font-size:14px}
+.buttons{margin-top:22px;display:flex;gap:14px;justify-content:center}
+.btn1{background:#e8c07a;color:#000;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700}
+.btn2{border:1px solid #e8c07a;color:#e8c07a;padding:12px 24px;border-radius:8px;text-decoration:none}
+.news{padding:26px 22px;max-width:1100px;margin:auto}.news h2{color:#e8c07a;font-size:16px;margin-bottom:16px;border-bottom:1px solid #e8c07a;display:inline-block;padding-bottom:5px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:#17100c;border:1px solid #3a2a1a;border-radius:12px;overflow:hidden}.card img{width:100%;height:140px;object-fit:cover}.card-info{padding:14px}
+.date{background:#2a1a10;color:#e8c07a;font-size:10px;padding:4px 8px;border-radius:4px}.card h3{font-size:14px;color:#e8c07a;margin:10px 0 6px}.card p{font-size:12px;color:#9a8a7a}
+.footer{text-align:center;padding:18px;color:#6a5a4a;font-size:11px;border-top:1px solid #1a100c;margin-top:30px}
 </style>
 </head>
 <body>
-
 <div class="header">
-  <div class="logo">
-    <div class="logo-circle">
-      <svg viewBox="0 0 100 75" fill="none" stroke="#e8c07a" stroke-width="1.8">
-        <path d="M8 62 L32 28 L40 36 L34 46 L38 40 L54 10 L61 28 L65 24 L58 40 L63 36 L70 20 L78 28 L72 40 L77 36 L92 62 Z" fill="#e8c07a" stroke="none" opacity="0.9"/>
-        <path d="M38 58 L38 32 L52 32 C62 32 68 38 68 45 C68 51 63 57 52 57 L52 52 C60 52 63 49 63 45 C63 41 60 37 52 37 L43 37 L43 58 Z M43 50 L52 50 L68 67 L61 67 L47 50 Z" stroke="#e8c07a" stroke-width="1.6" fill="none"/>
-      </svg>
-    </div>
-    RIFFAN.IO
-  </div>
-  <a class="buy-btn" href="https://odin.fun/token/hjcn" target="_blank">BUY</a>
+<div class="logo"><div class="logo-circle">🏔️</div> RIFFAN.IO</div>
+<a class="buy-btn" href="https://odin.fun/token/hjcn" target="_blank">BUY</a>
 </div>
 
-<div class="ticker">
-  <div class="ticker-track">
-    <span>BTC $62,418 <span class="green">+1.24% ▲</span></span>
-    <span>ETH $3,051 <span class="green">+0.87% ▲</span></span>
-    <span>SOL $142.53 <span class="red">-0.42% ▼</span></span>
-    <span>RIFF $0.248 <span class="green">+12.4% ▲</span></span>
-    <span>BNB $567.20 <span class="green">+0.91% ▲</span></span>
-    <span>BTC $62,418 <span class="green">+1.24% ▲</span></span>
-    <span>ETH $3,051 <span class="green">+0.87% ▲</span></span>
-    <span>SOL $142.53 <span class="red">-0.42% ▼</span></span>
-    <span>RIFF $0.248 <span class="green">+12.4% ▲</span></span>
-  </div>
-</div>
+<div class="ticker"><div class="ticker-track" id="ticker">... كيحمل الأثمنة الحقيقية ...</div></div>
 
 <div class="hero">
-  <h1>The Next-Gen<br>Crypto<br>Ecosystem</h1>
-  <p>Trade, stake, and earn with RIFFAN — secure, scalable, and built for the future of decentralized finance.</p>
-  <div class="buttons">
-    <a class="btn1" href="https://odin.fun/token/hjcn" target="_blank">Launch App</a>
-    <a class="btn2" href="#">Learn More</a>
-  </div>
+<h1>Anagraw Atrar n Crypto</h1>
+<p style="font-size:12px;letter-spacing:3px;opacity:0.6;margin-top:6px">THE NEXT-GEN CRYPTO ECOSYSTEM</p>
+<p>Trade, stake, and earn with RIFFAN — secure, scalable, and built for the future.</p>
+<div class="buttons"><a class="btn1" href="https://odin.fun/token/hjcn" target="_blank">Launch App</a><a class="btn2" href="#">Learn More</a></div>
 </div>
 
-<div class="news">
-  <h2>Latest News</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=600">
-      <div class="card-info"><span class="date">Oct 05, 2024</span><h3>RIFFAN.IO Secures $5M Seed Round</h3><p>Funding will accelerate Layer-2 development.</p></div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?w=600">
-      <div class="card-info"><span class="date">Oct 03, 2024</span><h3>New Staking Rewards Now Live</h3><p>Earn Up to 18% APY staking RIFF.</p></div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600">
-      <div class="card-info"><span class="date">Sep 30, 2024</span><h3>Layer-2 Testnet Goes Live</h3><p>Build and test on RIFFAN L2 with reduced gas.</p></div>
-    </div>
-  </div>
-</div>
+<div class="news"><h2>Latest News</h2><div class="grid">
+<div class="card"><img src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=600"><div class="card-info"><span class="date">Live</span><h3>RIFFAN.IO Secures $5M Seed Round</h3><p>Funding will accelerate Layer-2 development.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1559526324-593bc073d938?w=600"><div class="card-info"><span class="date">Live</span><h3>New Staking Rewards Now Live</h3><p>Earn Up to 18% APY staking RIFF.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600"><div class="card-info"><span class="date">Live</span><h3>Layer-2 Testnet Goes Live</h3><p>Build and test on RIFFAN L2.</p></div></div>
+</div></div>
+<div class="footer">© 2024 RIFFAN.IO</div>
 
-<div class="footer">© 2024 RIFFAN.IO • Privacy • Terms • Support</div>
+<script>
+// أثمنة حقيقية LIVE من CoinGecko
+async function loadPrices(){
+  try{
+    const r = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,binancecoin&vs_currencies=usd&include_24hr_change=true');
+    const d = await r.json();
+    const fmt = (n,c) => {
+      const ch = c.toFixed(2);
+      const cls = ch>=0?'green':'red';
+      const arrow = ch>=0?'▲':'▼';
+      return `<span class="${cls}">${ch>=0?'+':''}${ch}% ${arrow}</span>`;
+    };
+    const html = `
+      <span>BTC $${d.bitcoin.usd.toLocaleString()} ${fmt(0,d.bitcoin.usd_24h_change)}</span>
+      <span>ETH $${d.ethereum.usd.toLocaleString()} ${fmt(0,d.ethereum.usd_24h_change)}</span>
+      <span>SOL $${d.solana.usd.toLocaleString()} ${fmt(0,d.solana.usd_24h_change)}</span>
+      <span>BNB $${d.binancecoin.usd.toLocaleString()} ${fmt(0,d.binancecoin.usd_24h_change)}</span>
+      <span>RIFF $0.248 <span class="green">+12.4% ▲</span></span>
+      <span>BTC $${d.bitcoin.usd.toLocaleString()} ${fmt(0,d.bitcoin.usd_24h_change)}</span>
+      <span>ETH $${d.ethereum.usd.toLocaleString()} ${fmt(0,d.ethereum.usd_24h_change)}</span>
+      <span>SOL $${d.solana.usd.toLocaleString()} ${fmt(0,d.solana.usd_24h_change)}</span>
+    `;
+    document.getElementById('ticker').innerHTML = html + html; // دوبل باش يدوز بلا فراغ
+  }catch(e){
+    document.getElementById('ticker').innerHTML = 'BTC $62,418 +1.24% ▲ | ETH $3,051 +0.87% ▲ | SOL $142.53 -0.42% ▼ | RIFF $0.248 +12.4% ▲';
+  }
+}
+loadPrices();
+setInterval(loadPrices, 60000); // كيتجدد كل دقيقة
+</script>
 </body>
 </html>
