@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RIFFAN.IO - République du Rif 1923</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#a00a0a;color:#ffd700;font-family:Arial, sans-serif;overflow-x:hidden}
 
+/* الشريط اللي كيدوز من 1 حتى 10 */
+.ticker{background:#8b0000;border-top:2px solid #ffd700;border-bottom:2px solid #ffd700;padding:10px 0;white-space:nowrap;overflow:hidden}
+.ticker-track{display:inline-block;animation:scroll 40s linear infinite}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker span{margin:0 20px;font-weight:bold;font-size:14px}
+.up{color:#00ff88}
+
+/* الهيدر */
+.header{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:#7a0000;border-bottom:2px solid #ffd700}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-circle{width:45px;height:45px;background:radial-gradient(#ffd700,#a67c00);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#7a0000;font-weight:900;border:2px solid #ffd700}
+.header h1{font-size:22px;letter-spacing:2px}
+.btn-gold{background:linear-gradient(#ffd700,#ffb700);color:#7a0000;border:none;padding:8px 20px;border-radius:20px;font-weight:900;cursor:pointer}
+
+/* الوسط */
+.hero{text-align:center;padding:40px 20px;background:radial-gradient(circle at center,#b50e0e,#7a0000)}
+.hero h2{font-size:42px;margin:20px 0;text-shadow:2
