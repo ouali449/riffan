@@ -114,3 +114,20 @@ live();
 </script>
 </body>
 </html>
+<script>
+async function updateTicker(){
+ try{
+  const r = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether,binancecoin,ripple,usd-coin,solana,tron,dogecoin,cardano&vs_currencies=usd&include_24hr_change=true');
+  const d = await r.json();
+  document.getElementById('track').innerHTML = `
+  <span class="ti">🐎 $RIFFAN $0.00014 <span class="up">+12.4%</span></span>
+  <span class="ti">1 BTC $${d.bitcoin.usd.toLocaleString()} <span class="up">+${d.bitcoin.usd_24h_change.toFixed(1)}%</span></span>
+  <span class="ti">2 ETH $${d.ethereum.usd.toLocaleString()} <span class="up">+${d.ethereum.usd_24h_change.toFixed(1)}%</span></span>
+  <span class="ti">3 SOL $${d.solana.usd} <span class="up">+${d.solana.usd_24h_change.toFixed(1)}%</span></span>
+  <span class="ti">7 ADA $${d.cardano.usd}</span>
+  `.repeat(2);
+ }catch(e){}
+}
+updateTicker();
+setInterval(updateTicker, 60000); // كل دقيقة كيتحدث
+</script>
