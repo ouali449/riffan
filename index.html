@@ -1,133 +1,713 @@
-<!doctype html>
-<html lang="fr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RIFFAN.IO - République du Rif 1923</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#08080a;color:#fff;font-family:Inter,Arial,sans-serif}
-.header{background:#0a0a0c;border-bottom:1px solid #1e1e22;display:flex;align-items:center;justify-content:space-between;padding:12px 18px;position:sticky;top:0;z-index:10}
-.logo{display:flex;align-items:center;gap:10px;font-weight:900;color:#d8b45b;font-size:22px}
-.nav{display:flex;gap:22px;font-size:14px}
-.nav a{color:#9a9aa3;text-decoration:none}.nav a.active{color:#d8b45b;border-bottom:2px solid #d8b45b;padding-bottom:4px}
-.btn-wallet{border:1px solid #d8b45b;color:#d8b45b;padding:9px 16px;border-radius:22px;background:transparent}
-.ticker{background:#0f0f11;border:1px solid #d8b45b22;border-radius:12px;margin:10px 12px;display:flex;overflow:hidden}
-.ticker-track{display:flex;animation:scroll 40s linear infinite;width:max-content}
-@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.t-item{display:flex;align-items:center;gap:8px;padding:10px 16px;border-right:1px solid #222;font-size:12px;white-space:nowrap}
-.t-item b{color:#fff}.t-item.up{color:#19d66b}
-.hero{position:relative;margin:12px;border-radius:18px;overflow:hidden;background:radial-gradient(ellipse at center,#3a1810,#08080a);min-height:420px;display:grid;grid-template-columns:1fr 360px;gap:20px;padding:28px}
-.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200') center/cover;opacity:0.25}
-.hero-content{position:relative;z-index:1}
-.hero h1{font-size:56px;line-height:0.9;color:#f5d27a;text-shadow:0 2px 10px #000}
-.hero h2{font-size:28px;color:#d8b45b;margin-top:6px}
-.hero p{color:#b8b8c0;margin-top:12px;max-width:420px;line-height:1.5;font-size:13px}
-.btn-trade{background:linear-gradient(#ffe27a,#d8b45b);color:#000;padding:14px 22px;border-radius:28px;font-weight:900;border:none;margin-top:18px;display:inline-flex;gap:8px;cursor:pointer}
-.coin-center{position:relative;z-index:1;display:flex;align-items:center;justify-content:center}
-.coin-big{width:280px;height:280px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ffe9a0,#c89a2a,#8a5d00);border:8px solid #d8b45b;box-shadow:0 0 60px rgba(216,180,91,.4),inset 0 0 20px #000;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.coin-big img{width:100%;height:100%;object-fit:cover}
-.r-card{position:relative;z-index:1;background:rgba(17,17,20,.85);border:1px solid #2a2a30;border-radius:16px;padding:16px;backdrop-filter:blur(8px)}
-.r-head{display:flex;align-items:center;gap:10px}
-.price{font-size:28px;font-weight:900;margin:10px 0}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px;color:#888}
-.grid2 b{color:#fff;display:block}
-.bottom{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px}
-.box{background:#101012;border:1px solid #222;border-radius:14px;padding:14px}
-.box h3{font-size:14px;margin-bottom:10px}
-.row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #1a1a1e;font-size:12px}
-@media(max-width:900px){.hero{grid-template-columns:1fr}.bottom{grid-template-columns:1fr}.nav{display:none}}
-</style>
-</head>
-<body>
-<div class="header">
-  <div class="logo"><span style="width:38px;height:38px;border-radius:50%;background:#a00;display:flex;align-items:center;justify-content:center">🐎</span> RIFFAN.IO</div>
-  <div class="nav"><a class="active" href="#">Accueil</a><a href="#">Marché</a><a href="#">Actualités</a><a href="#">À propos</a><a href="#">FAQ</a></div>
-  <div style="display:flex;gap:10px;align-items:center"><button class="btn-wallet">Connecter le wallet</button></div>
-</div>
+<!-- ==============================
+     RIFFAN.IO — NEW HERO
+     ============================== -->
 
-<div class="ticker"><div class="ticker-track" id="ticker">
-<span class="t-item">🐎 $RIFFAN $0.00014 <span class="up">+12.4%</span></span>
-<span class="t-item">1. BTC $81,123.07 <span class="up">+6.1%</span></span>
-<span class="t-item">2. ETH $2,636.60 <span class="up">+7.7%</span></span>
-<span class="t-item">3. USDT $0.9997 <span class="up">+0.0%</span></span>
-<span class="t-item">4. BNB $764.65 <span class="up">+5.3%</span></span>
-<span class="t-item">5. XRP $1.41 <span class="up">+8.6%</span></span>
-<span class="t-item">6. USDC $0.9998 <span class="up">+0.1%</span></span>
-<span class="t-item">7. SOL $113.86 <span class="up">+13.1%</span></span>
-<span class="t-item">8. TRX $0.3384 <span class="up">+5.7%</span></span>
-<span class="t-item">9. DOGE $0.1789 <span class="up">+4.2%</span></span>
-<span class="t-item">10. ADA $0.3761 <span class="up">+6.8%</span></span>
-<span class="t-item">🐎 $RIFFAN $0.00014 <span class="up">+12.4%</span></span>
-<span class="t-item">1. BTC $81,123.07 <span class="up">+6.1%</span></span>
-<span class="t-item">2. ETH $2,636.60 <span class="up">+7.7%</span></span>
-<span class="t-item">3. USDT $0.9997 <span class="up">+0.0%</span></span>
-<span class="t-item">4. BNB $764.65 <span class="up">+5.3%</span></span>
-<span class="t-item">5. XRP $1.41 <span class="up">+8.6%</span></span>
-<span class="t-item">6. USDC $0.9998 <span class="up">+0.1%</span></span>
-<span class="t-item">7. SOL $113.86 <span class="up">+13.1%</span></span>
-<span class="t-item">8. TRX $0.3384 <span class="up">+5.7%</span></span>
-<span class="t-item">9. DOGE $0.1789 <span class="up">+4.2%</span></span>
-<span class="t-item">10. ADA $0.3761 <span class="up">+6.8%</span></span>
-</div></div>
+<section class="riffan-hero">
 
-<div class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div style="color:#d8b45b;font-size:11px;letter-spacing:2px">PLUS QU'UNE CRYPTO</div>
-    <h1>RIFFAN<br>RÉPUBLIQUE DU RIF<br>1923</h1>
-    <div style="color:#f0d27b;font-style:italic;margin-top:6px">The Royal Crypto Republic</div>
-    <p>Une communauté. Une monnaie. Une vision. $RIFFAN est plus qu'un jeton : c'est un symbole de liberté, de souveraineté et d'avenir.</p>
-    <button class="btn-trade" onclick="window.open('https://odin.fun/token/hjcn','_blank')">↗ TRADE $RIFFAN →</button>
-  </div>
-  <div class="coin-center"><div class="coin-big"><img src="rif-coin.png" onerror="this.src='https://i.ibb.co/placeholder-coin'"></div></div>
-  <div class="r-card">
-    <div class="r-head"><div style="width:36px;height:36px;border-radius:50%;background:#a00;display:flex;align-items:center;justify-content:center">🐎</div><div><b>$RIFFAN</b><div style="font-size:11px;color:#888">Rif Token</div></div></div>
-    <div class="price">$0.00014 <span style="color:#19d66b;font-size:14px">+12.4% ↗</span></div>
-    <div class="grid2">
-      <div>Market Cap <b>$1,428,532</b></div><div>TVL <b>$12.4M</b></div>
-      <div>Volume (24h) <b>$284,761</b></div><div>Holders <b>28,542</b></div>
-      <div>Liquidity <b>$412,893</b></div><div>Supply <b>100B</b></div>
+  <!-- Background glow -->
+  <div class="riffan-glow"></div>
+
+  <!-- LEFT -->
+  <div class="riffan-content">
+
+    <div class="riffan-badge">
+      RÉPUBLIQUE DU RIF • 1923
     </div>
+
+    <div class="riffan-small-title">
+      PLUS QU'UNE CRYPTO
+    </div>
+
+    <h1>
+      RIFFAN
+      <span>1923</span>
+    </h1>
+
+    <h2>
+      The Royal Crypto Republic
+    </h2>
+
+    <p>
+      Une communauté. Une monnaie. Une vision.
+      <strong>$RIFFAN</strong> représente une nouvelle
+      génération de crypto décentralisée.
+    </p>
+
+    <div class="riffan-buttons">
+
+      <a href="#" class="riffan-trade">
+        ↗ TRADE $RIFFAN
+      </a>
+
+      <a href="#market" class="riffan-market">
+        VOIR LE MARCHÉ ↓
+      </a>
+
+    </div>
+
+    <!-- Stats -->
+    <div class="riffan-stats">
+
+      <div>
+        <small>PRICE</small>
+        <strong id="riffanPrice">$0.000000</strong>
+      </div>
+
+      <div>
+        <small>24H</small>
+        <strong class="green">+0.00%</strong>
+      </div>
+
+      <div>
+        <small>MARKET CAP</small>
+        <strong>$0</strong>
+      </div>
+
+    </div>
+
   </div>
-</div>
 
-<div class="bottom">
-  <div class="box"><h3>📊 Top 10 Cryptos</h3><div id="top10">Chargement...</div></div>
-  <div class="box"><h3>📰 Actualités Crypto</h3><div class="row">Bitcoin franchit 81 000 $ <span style="color:#666">Il y a 2h</span></div><div class="row">Ethereum mise à jour Pectra <span style="color:#666">Il y a 4h</span></div><div class="row">Solana record transactions <span style="color:#666">Il y a 6h</span></div></div>
-</div>
-<footer style="text-align:center;padding:20px;color:#555;font-size:11px">© 2026 RIFFAN.IO • RÉPUBLIQUE DU RIF 1923 • The Royal Crypto Republic</footer>
 
-<script>
-// LIVE prices
-async function live(){
- try{
-  const r=await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether,binancecoin,ripple,usd-coin,solana,tron,dogecoin,cardano&vs_currencies=usd&include_24hr_change=true');
-  const d=await r.json();
-  const map={bitcoin:['BTC','Bitcoin'],ethereum:['ETH','Ethereum'],tether:['USDT','Tether'],binancecoin:['BNB','BNB'],ripple:['XRP','XRP'],'usd-coin':['USDC','USDC'],solana:['SOL','Solana'],tron:['TRX','TRON'],dogecoin:['DOGE','Dogecoin'],cardano:['ADA','Cardano']};
-  let i=1,html='';
-  for(let k in map){const v=d[k];if(!v)continue;html+=`<div class="row"><span>${i} ${map[k][0]} (${map[k][1]})</span><span>$${v.usd}</span><span style="color:#19d66b">+${(v.usd_24h_change||0).toFixed(1)}%</span></div>`;i++}
-  document.getElementById('top10').innerHTML=html;
- }catch(e){document.getElementById('top10').innerHTML='Market data loading...';}
+  <!-- RIGHT / COIN -->
+  <div class="riffan-coin-area">
+
+    <div class="coin-ring"></div>
+
+    <img
+      src="riffan-coin.jpg"
+      alt="$RIFFAN Coin"
+      class="riffan-coin"
+    />
+
+    <div class="coin-shadow"></div>
+
+  </div>
+
+</section>
+
+
+<style>
+
+/* ==============================
+   MAIN
+   ============================== */
+
+.riffan-hero {
+
+  position: relative;
+
+  width: 100%;
+  min-height: 720px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  padding: 80px 7%;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 75% 50%,
+      rgba(191,142,45,.15),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 15% 80%,
+      rgba(120,70,30,.12),
+      transparent 30%
+    ),
+    #050608;
+
+  color: white;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 }
-live();
-</script>
-</body>
-</html>
-<script>
-async function updateTicker(){
- try{
-  const r = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether,binancecoin,ripple,usd-coin,solana,tron,dogecoin,cardano&vs_currencies=usd&include_24hr_change=true');
-  const d = await r.json();
-  document.getElementById('track').innerHTML = `
-  <span class="ti">🐎 $RIFFAN $0.00014 <span class="up">+12.4%</span></span>
-  <span class="ti">1 BTC $${d.bitcoin.usd.toLocaleString()} <span class="up">+${d.bitcoin.usd_24h_change.toFixed(1)}%</span></span>
-  <span class="ti">2 ETH $${d.ethereum.usd.toLocaleString()} <span class="up">+${d.ethereum.usd_24h_change.toFixed(1)}%</span></span>
-  <span class="ti">3 SOL $${d.solana.usd} <span class="up">+${d.solana.usd_24h_change.toFixed(1)}%</span></span>
-  <span class="ti">7 ADA $${d.cardano.usd}</span>
-  `.repeat(2);
- }catch(e){}
+
+
+/* GOLD GLOW */
+
+.riffan-glow {
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  right: 8%;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(240,185,70,.20),
+      transparent 65%
+    );
+
+  filter: blur(30px);
+
+  pointer-events: none;
 }
-updateTicker();
-setInterval(updateTicker, 60000); // كل دقيقة كيتحدث
-</script>
+
+
+/* ==============================
+   CONTENT
+   ============================== */
+
+.riffan-content {
+
+  position: relative;
+
+  z-index: 3;
+
+  width: 52%;
+
+  max-width: 650px;
+}
+
+
+.riffan-badge {
+
+  display: inline-block;
+
+  padding: 12px 22px;
+
+  margin-bottom: 28px;
+
+  border: 1px solid #a98235;
+
+  border-radius: 40px;
+
+  color: #e2bd67;
+
+  font-size: 14px;
+
+  letter-spacing: 3px;
+
+  background:
+    rgba(180,130,45,.04);
+}
+
+
+.riffan-small-title {
+
+  color: #d3ad59;
+
+  font-size: 15px;
+
+  letter-spacing: 5px;
+
+  margin-bottom: 8px;
+}
+
+
+.riffan-content h1 {
+
+  margin: 0;
+
+  font-size: clamp(70px, 9vw, 130px);
+
+  line-height: .85;
+
+  letter-spacing: -5px;
+
+  font-weight: 900;
+
+  color: #f2ca72;
+
+  text-shadow:
+    0 5px 30px rgba(0,0,0,.5);
+}
+
+
+.riffan-content h1 span {
+
+  display: block;
+
+  font-size: .42em;
+
+  letter-spacing: 8px;
+
+  margin-top: 15px;
+
+  color: #b98b3d;
+}
+
+
+.riffan-content h2 {
+
+  margin: 28px 0 20px;
+
+  font-size: 30px;
+
+  font-weight: 500;
+
+  font-style: italic;
+
+  color: #f0d27f;
+}
+
+
+.riffan-content p {
+
+  max-width: 590px;
+
+  margin: 0;
+
+  color: #b7b8bd;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+}
+
+
+.riffan-content p strong {
+
+  color: #f1c967;
+}
+
+
+/* ==============================
+   BUTTONS
+   ============================== */
+
+.riffan-buttons {
+
+  display: flex;
+
+  gap: 15px;
+
+  margin-top: 35px;
+
+  flex-wrap: wrap;
+}
+
+
+.riffan-buttons a {
+
+  text-decoration: none;
+
+  font-weight: 800;
+
+  padding: 17px 28px;
+
+  border-radius: 50px;
+
+  transition: .25s ease;
+}
+
+
+.riffan-trade {
+
+  color: #090909;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f9d878,
+      #c99a3c
+    );
+
+  box-shadow:
+    0 10px 35px rgba(205,157,57,.22);
+}
+
+
+.riffan-market {
+
+  color: #f0ca72;
+
+  border: 1px solid #765d2b;
+
+  background: rgba(255,255,255,.02);
+}
+
+
+.riffan-buttons a:hover {
+
+  transform: translateY(-3px);
+
+}
+
+
+/* ==============================
+   STATS
+   ============================== */
+
+.riffan-stats {
+
+  display: flex;
+
+  gap: 0;
+
+  margin-top: 45px;
+
+  border-top: 1px solid rgba(210,170,80,.18);
+
+  padding-top: 25px;
+}
+
+
+.riffan-stats div {
+
+  padding-right: 35px;
+
+  margin-right: 35px;
+
+  border-right:
+    1px solid rgba(210,170,80,.18);
+}
+
+
+.riffan-stats div:last-child {
+
+  border: 0;
+
+}
+
+
+.riffan-stats small {
+
+  display: block;
+
+  color: #777a82;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 7px;
+}
+
+
+.riffan-stats strong {
+
+  font-size: 19px;
+
+  color: white;
+}
+
+
+.riffan-stats .green {
+
+  color: #22df88;
+}
+
+
+/* ==============================
+   COIN
+   ============================== */
+
+.riffan-coin-area {
+
+  position: relative;
+
+  width: 48%;
+
+  min-height: 550px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 2;
+}
+
+
+.riffan-coin {
+
+  position: relative;
+
+  width: min(510px, 90%);
+
+  height: auto;
+
+  z-index: 4;
+
+  border-radius: 50%;
+
+  animation:
+    riffanFloat 6s ease-in-out infinite;
+
+  filter:
+    drop-shadow(
+      0 30px 40px rgba(0,0,0,.75)
+    )
+    drop-shadow(
+      0 0 35px rgba(220,166,65,.25)
+    );
+}
+
+
+/* GOLD RING */
+
+.coin-ring {
+
+  position: absolute;
+
+  width: 520px;
+
+  height: 520px;
+
+  max-width: 95%;
+
+  max-height: 95%;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(229,186,86,.3);
+
+  box-shadow:
+    0 0 80px rgba(222,170,60,.12),
+    inset 0 0 50px rgba(222,170,60,.05);
+
+  animation:
+    ringPulse 4s ease-in-out infinite;
+}
+
+
+/* SHADOW */
+
+.coin-shadow {
+
+  position: absolute;
+
+  bottom: 5%;
+
+  width: 65%;
+
+  height: 50px;
+
+  background: rgba(0,0,0,.65);
+
+  filter: blur(25px);
+
+  border-radius: 50%;
+}
+
+
+/* ==============================
+   ANIMATIONS
+   ============================== */
+
+@keyframes riffanFloat {
+
+  0%,100% {
+
+    transform:
+      translateY(0)
+      rotate(-1deg);
+
+  }
+
+  50% {
+
+    transform:
+      translateY(-15px)
+      rotate(1deg);
+
+  }
+
+}
+
+
+@keyframes ringPulse {
+
+  0%,100% {
+
+    transform: scale(1);
+
+    opacity: .5;
+
+  }
+
+  50% {
+
+    transform: scale(1.04);
+
+    opacity: .9;
+
+  }
+
+}
+
+
+/* ==============================
+   MOBILE
+   ============================== */
+
+@media(max-width: 768px) {
+
+  .riffan-hero {
+
+    min-height: auto;
+
+    flex-direction: column;
+
+    padding: 55px 22px 70px;
+
+    text-align: center;
+
+    gap: 35px;
+
+  }
+
+
+  .riffan-content {
+
+    width: 100%;
+
+    max-width: 100%;
+
+  }
+
+
+  .riffan-badge {
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    padding: 10px 15px;
+
+  }
+
+
+  .riffan-content h1 {
+
+    font-size: 76px;
+
+    letter-spacing: -4px;
+
+    overflow-wrap: break-word;
+
+  }
+
+
+  .riffan-content h1 span {
+
+    font-size: 32px;
+
+    letter-spacing: 5px;
+
+  }
+
+
+  .riffan-content h2 {
+
+    font-size: 23px;
+
+  }
+
+
+  .riffan-content p {
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+  }
+
+
+  .riffan-buttons {
+
+    flex-direction: column;
+
+    align-items: center;
+
+  }
+
+
+  .riffan-buttons a {
+
+    width: 100%;
+
+    max-width: 350px;
+
+  }
+
+
+  .riffan-stats {
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+  }
+
+
+  .riffan-stats div {
+
+    margin: 0;
+
+    padding: 0 15px;
+
+  }
+
+
+  .riffan-coin-area {
+
+    width: 100%;
+
+    min-height: 380px;
+
+  }
+
+
+  .riffan-coin {
+
+    width: min(340px, 88vw);
+
+  }
+
+
+  .coin-ring {
+
+    width: 350px;
+
+    height: 350px;
+
+  }
+
+}
+
+
+/* SMALL PHONES */
+
+@media(max-width: 400px) {
+
+  .riffan-content h1 {
+
+    font-size: 62px;
+
+  }
+
+  .riffan-content h2 {
+
+    font-size: 20px;
+
+  }
+
+  .riffan-coin-area {
+
+    min-height: 320px;
+
+  }
+
+}
+
+</style>
