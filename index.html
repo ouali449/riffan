@@ -1,714 +1,126 @@
-<img src="images/riffan-coin.jpg" alt="RIFFAN Coin">
-<!-- ==============================
-     RIFFAN.IO — NEW HERO
-     ============================== -->
-
-<section class="riffan-hero">
-
-  <!-- Background glow -->
-  <div class="riffan-glow"></div>
-
-  <!-- LEFT -->
-  <div class="riffan-content">
-
-    <div class="riffan-badge">
-      RÉPUBLIQUE DU RIF • 1923
-    </div>
-
-    <div class="riffan-small-title">
-      PLUS QU'UNE CRYPTO
-    </div>
-
-    <h1>
-      RIFFAN
-      <span>1923</span>
-    </h1>
-
-    <h2>
-      The Royal Crypto Republic
-    </h2>
-
-    <p>
-      Une communauté. Une monnaie. Une vision.
-      <strong>$RIFFAN</strong> représente une nouvelle
-      génération de crypto décentralisée.
-    </p>
-
-    <div class="riffan-buttons">
-
-      <a href="#" class="riffan-trade">
-        ↗ TRADE $RIFFAN
-      </a>
-
-      <a href="#market" class="riffan-market">
-        VOIR LE MARCHÉ ↓
-      </a>
-
-    </div>
-
-    <!-- Stats -->
-    <div class="riffan-stats">
-
-      <div>
-        <small>PRICE</small>
-        <strong id="riffanPrice">$0.000000</strong>
-      </div>
-
-      <div>
-        <small>24H</small>
-        <strong class="green">+0.00%</strong>
-      </div>
-
-      <div>
-        <small>MARKET CAP</small>
-        <strong>$0</strong>
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- RIGHT / COIN -->
-  <div class="riffan-coin-area">
-
-    <div class="coin-ring"></div>
-
-    <img
-      src="riffan-coin.jpg"
-      alt="$RIFFAN Coin"
-      class="riffan-coin"
-    />
-
-    <div class="coin-shadow"></div>
-
-  </div>
-
-</section>
-
-
-<style>
-
-/* ==============================
-   MAIN
-   ============================== */
-
-.riffan-hero {
-
-  position: relative;
-
-  width: 100%;
-  min-height: 720px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 40px;
-
-  padding: 80px 7%;
-
-  overflow: hidden;
-
-  background:
-    radial-gradient(
-      circle at 75% 50%,
-      rgba(191,142,45,.15),
-      transparent 35%
-    ),
-    radial-gradient(
-      circle at 15% 80%,
-      rgba(120,70,30,.12),
-      transparent 30%
-    ),
-    #050608;
-
-  color: white;
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-}
-
-
-/* GOLD GLOW */
-
-.riffan-glow {
-
-  position: absolute;
-
-  width: 500px;
-  height: 500px;
-
-  right: 8%;
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(240,185,70,.20),
-      transparent 65%
-    );
-
-  filter: blur(30px);
-
-  pointer-events: none;
-}
-
-
-/* ==============================
-   CONTENT
-   ============================== */
-
-.riffan-content {
-
-  position: relative;
-
-  z-index: 3;
-
-  width: 52%;
-
-  max-width: 650px;
-}
-
-
-.riffan-badge {
-
-  display: inline-block;
-
-  padding: 12px 22px;
-
-  margin-bottom: 28px;
-
-  border: 1px solid #a98235;
-
-  border-radius: 40px;
-
-  color: #e2bd67;
-
-  font-size: 14px;
-
-  letter-spacing: 3px;
-
-  background:
-    rgba(180,130,45,.04);
-}
-
-
-.riffan-small-title {
-
-  color: #d3ad59;
-
-  font-size: 15px;
-
-  letter-spacing: 5px;
-
-  margin-bottom: 8px;
-}
-
-
-.riffan-content h1 {
-
-  margin: 0;
-
-  font-size: clamp(70px, 9vw, 130px);
-
-  line-height: .85;
-
-  letter-spacing: -5px;
-
-  font-weight: 900;
-
-  color: #f2ca72;
-
-  text-shadow:
-    0 5px 30px rgba(0,0,0,.5);
-}
-
-
-.riffan-content h1 span {
-
-  display: block;
-
-  font-size: .42em;
-
-  letter-spacing: 8px;
-
-  margin-top: 15px;
-
-  color: #b98b3d;
-}
-
-
-.riffan-content h2 {
-
-  margin: 28px 0 20px;
-
-  font-size: 30px;
-
-  font-weight: 500;
-
-  font-style: italic;
-
-  color: #f0d27f;
-}
-
-
-.riffan-content p {
-
-  max-width: 590px;
-
-  margin: 0;
-
-  color: #b7b8bd;
-
-  font-size: 18px;
-
-  line-height: 1.8;
-}
-
-
-.riffan-content p strong {
-
-  color: #f1c967;
-}
-
-
-/* ==============================
-   BUTTONS
-   ============================== */
-
-.riffan-buttons {
-
-  display: flex;
-
-  gap: 15px;
-
-  margin-top: 35px;
-
-  flex-wrap: wrap;
-}
-
-
-.riffan-buttons a {
-
-  text-decoration: none;
-
-  font-weight: 800;
-
-  padding: 17px 28px;
-
-  border-radius: 50px;
-
-  transition: .25s ease;
-}
-
-
-.riffan-trade {
-
-  color: #090909;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f9d878,
-      #c99a3c
-    );
-
-  box-shadow:
-    0 10px 35px rgba(205,157,57,.22);
-}
-
-
-.riffan-market {
-
-  color: #f0ca72;
-
-  border: 1px solid #765d2b;
-
-  background: rgba(255,255,255,.02);
-}
-
-
-.riffan-buttons a:hover {
-
-  transform: translateY(-3px);
-
-}
-
-
-/* ==============================
-   STATS
-   ============================== */
-
-.riffan-stats {
-
-  display: flex;
-
-  gap: 0;
-
-  margin-top: 45px;
-
-  border-top: 1px solid rgba(210,170,80,.18);
-
-  padding-top: 25px;
-}
-
-
-.riffan-stats div {
-
-  padding-right: 35px;
-
-  margin-right: 35px;
-
-  border-right:
-    1px solid rgba(210,170,80,.18);
-}
-
-
-.riffan-stats div:last-child {
-
-  border: 0;
-
-}
-
-
-.riffan-stats small {
-
-  display: block;
-
-  color: #777a82;
-
-  font-size: 10px;
-
-  letter-spacing: 2px;
-
-  margin-bottom: 7px;
-}
-
-
-.riffan-stats strong {
-
-  font-size: 19px;
-
-  color: white;
-}
-
-
-.riffan-stats .green {
-
-  color: #22df88;
-}
-
-
-/* ==============================
-   COIN
-   ============================== */
-
-.riffan-coin-area {
-
-  position: relative;
-
-  width: 48%;
-
-  min-height: 550px;
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-  z-index: 2;
-}
-
-
-.riffan-coin {
-
-  position: relative;
-
-  width: min(510px, 90%);
-
-  height: auto;
-
-  z-index: 4;
-
-  border-radius: 50%;
-
-  animation:
-    riffanFloat 6s ease-in-out infinite;
-
-  filter:
-    drop-shadow(
-      0 30px 40px rgba(0,0,0,.75)
-    )
-    drop-shadow(
-      0 0 35px rgba(220,166,65,.25)
-    );
-}
-
-
-/* GOLD RING */
-
-.coin-ring {
-
-  position: absolute;
-
-  width: 520px;
-
-  height: 520px;
-
-  max-width: 95%;
-
-  max-height: 95%;
-
-  border-radius: 50%;
-
-  border:
-    1px solid rgba(229,186,86,.3);
-
-  box-shadow:
-    0 0 80px rgba(222,170,60,.12),
-    inset 0 0 50px rgba(222,170,60,.05);
-
-  animation:
-    ringPulse 4s ease-in-out infinite;
-}
-
-
-/* SHADOW */
-
-.coin-shadow {
-
-  position: absolute;
-
-  bottom: 5%;
-
-  width: 65%;
-
-  height: 50px;
-
-  background: rgba(0,0,0,.65);
-
-  filter: blur(25px);
-
-  border-radius: 50%;
-}
-
-
-/* ==============================
-   ANIMATIONS
-   ============================== */
-
-@keyframes riffanFloat {
-
-  0%,100% {
-
-    transform:
-      translateY(0)
-      rotate(-1deg);
-
-  }
-
-  50% {
-
-    transform:
-      translateY(-15px)
-      rotate(1deg);
-
-  }
-
-}
-
-
-@keyframes ringPulse {
-
-  0%,100% {
-
-    transform: scale(1);
-
-    opacity: .5;
-
-  }
-
-  50% {
-
-    transform: scale(1.04);
-
-    opacity: .9;
-
-  }
-
-}
-
-
-/* ==============================
-   MOBILE
-   ============================== */
-
-@media(max-width: 768px) {
-
-  .riffan-hero {
-
-    min-height: auto;
-
-    flex-direction: column;
-
-    padding: 55px 22px 70px;
-
-    text-align: center;
-
-    gap: 35px;
-
-  }
-
-
-  .riffan-content {
-
-    width: 100%;
-
-    max-width: 100%;
-
-  }
-
-
-  .riffan-badge {
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
-
-    padding: 10px 15px;
-
-  }
-
-
-  .riffan-content h1 {
-
-    font-size: 76px;
-
-    letter-spacing: -4px;
-
-    overflow-wrap: break-word;
-
-  }
-
-
-  .riffan-content h1 span {
-
-    font-size: 32px;
-
-    letter-spacing: 5px;
-
-  }
-
-
-  .riffan-content h2 {
-
-    font-size: 23px;
-
-  }
-
-
-  .riffan-content p {
-
-    font-size: 16px;
-
-    line-height: 1.7;
-
-  }
-
-
-  .riffan-buttons {
-
-    flex-direction: column;
-
-    align-items: center;
-
-  }
-
-
-  .riffan-buttons a {
-
-    width: 100%;
-
-    max-width: 350px;
-
-  }
-
-
-  .riffan-stats {
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 20px;
-
-  }
-
-
-  .riffan-stats div {
-
-    margin: 0;
-
-    padding: 0 15px;
-
-  }
-
-
-  .riffan-coin-area {
-
-    width: 100%;
-
-    min-height: 380px;
-
-  }
-
-
-  .riffan-coin {
-
-    width: min(340px, 88vw);
-
-  }
-
-
-  .coin-ring {
-
-    width: 350px;
-
-    height: 350px;
-
-  }
-
-}
-
-
-/* SMALL PHONES */
-
-@media(max-width: 400px) {
-
-  .riffan-content h1 {
-
-    font-size: 62px;
-
-  }
-
-  .riffan-content h2 {
-
-    font-size: 20px;
-
-  }
-
-  .riffan-coin-area {
-
-    min-height: 320px;
-
-  }
-
-}
-
-</style>
+import pygame
+import random
+import sys
+import math
+
+pygame.init()
+WIDTH, HEIGHT = 1000, 600
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("RIFFAN.IO - 1923 EDITION")
+clock = pygame.time.Clock()
+
+# ألوان الريف
+BLACK = (10, 10, 10)
+GOLD = (212, 175, 55)
+RIF_RED = (180, 20, 20)
+WHITE = (255, 255, 255)
+AMAZIGH_BLUE = (0, 80, 160)
+
+font_big = pygame.font.SysFont('Arial', 48, bold=True)
+font_small = pygame.font.SysFont('Arial', 24, bold=True)
+
+# متغيرات العملة - هنا فين كتربط مشروعك
+TOKEN_NAME = "$RIFFAN"
+TOKEN_SUPPLY = 1923000000 # 1923 تاريخ الجمهورية
+coins_collected = 0
+
+class RiffanCoin:
+    def __init__(self):
+        self.x = random.randint(WIDTH, WIDTH+500)
+        self.y = random.randint(100, HEIGHT-100)
+        self.size = 40
+        self.speed = 4
+        self.angle = 0
+
+    def update(self):
+        self.x -= self.speed
+        self.angle += 5
+        if self.x < -50:
+            self.x = WIDTH + random.randint(0, 300)
+            self.y = random.randint(100, HEIGHT-100)
+
+    def draw(self):
+        # رسم العملة ديالك الكحلة مع ₿ و ⵣ
+        center = (int(self.x), int(self.y))
+        # دائرة كحلة
+        pygame.draw.circle(screen, BLACK, center, self.size)
+        # حاشية ذهبية
+        pygame.draw.circle(screen, GOLD, center, self.size, 4)
+        # رمز البيتكوين
+        btc = font_small.render("₿", True, GOLD)
+        screen.blit(btc, (self.x-10, self.y-20))
+        # رمز أمازيغي
+        yaz = font_small.render("ⵣ", True, GOLD)
+        screen.blit(yaz, (self.x-10, self.y+5))
+        # تأثير لمعان
+        shine = int(5 * math.sin(math.radians(self.angle)))
+        pygame.draw.circle(screen, (255,255,255,100), (center[0]-8, center[1]-8), 6)
+
+class Rider:
+    def __init__(self):
+        self.x = 150
+        self.y = HEIGHT//2
+        self.vy = 0
+
+    def update(self):
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_SPACE] or keys[pygame.K_UP]:
+            self.vy = -6
+        self.vy += 0.35
+        self.y += self.vy
+        self.y = max(50, min(HEIGHT-80, self.y))
+
+    def draw(self):
+        # الفارس الريفي مبسط - تقدر تبدلو بصورة الحصان ديالك من بعد
+        pygame.draw.circle(screen, GOLD, (int(self.x), int(self.y)), 25)
+        pygame.draw.rect(screen, RIF_RED, (self.x-15, self.y+20, 30, 20))
+        # حصان
+        pygame.draw.ellipse(screen, WHITE, (self.x-30, self.y+10, 60, 20))
+
+rider = Rider()
+coins = [RiffanCoin() for _ in range(5)]
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    # خلفية
+    screen.fill((15, 25, 35))
+    # نجوم
+    for i in range(50):
+        pygame.draw.circle(screen, WHITE, (random.randint(0,WIDTH), random.randint(0,100)), 1)
+
+    rider.update()
+
+    for coin in coins:
+        coin.update()
+        coin.draw()
+        # تصادم
+        dist = math.hypot(rider.x - coin.x, rider.y - coin.y)
+        if dist < 45:
+            coins_collected += 1
+            coin.x = WIDTH + 200
+            # هنا فين تربط بالبلوكشين من بعد
+            print(f"Collected {coins_collected} {TOKEN_NAME}!")
+
+    rider.draw()
+
+    # HUD
+    title = font_big.render("RIFFAN.IO", True, GOLD)
+    screen.blit(title, (20, 10))
+    sub = font_small.render(f"REPUBLIC OF RIF - 1921", True, RIF_RED)
+    screen.blit(sub, (20, 65))
+
+    score_text = font_small.render(f"{TOKEN_NAME}: {coins_collected} / {TOKEN_SUPPLY}", True, WHITE)
+    screen.blit(score_text, (WIDTH-350, 20))
+
+    link = font_small.render("riffan.io - Buy on Dex", True, AMAZIGH_BLUE)
+    screen.blit(link, (WIDTH-350, 50))
+
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+sys.exit()
