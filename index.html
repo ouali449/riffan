@@ -1,126 +1,57 @@
-import pygame
-import random
-import sys
-import math
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RIFFAN.IO - République du Rif 1923</title>
+<style>
+body{background:#0a0e1a;color:#fff;font-family:Arial;margin:0}
+.header{display:flex;justify-content:space-between;padding:20px 40px;align-items:center;border-bottom:1px solid #d4af37}
+.logo{color:#d4af37;font-size:32px;font-weight:bold}
+.btn-trade{background:#00f0ff;color:#000;padding:15px 30px;border-radius:30px;font-weight:bold;text-decoration:none;font-size:18px}
+.metrics{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;padding:40px}
+.card{border:1px solid #d4af37;padding:20px;border-radius:15px;text-align:center;background:#11162a}
+.card h2{color:#d4af37;font-size:36px;margin:10px 0}
+table{width:95%;margin:20px auto;border-collapse:collapse;background:#11162a;border-radius:10px;overflow:hidden}
+th{background:#d4af37;color:#000;padding:12px} td{padding:12px;border-bottom:1px solid #222;text-align:center}
+.live{color:#00ff88}
+</style>
+</head>
+<body>
+<div class="header">
+<div class="logo">RIFFAN.IO <small style="font-size:14px;display:block;color:#aaa">République du Rif 1923</small></div>
+<a href="https://odin.fun/token/hjcn" target="_blank" class="btn-trade">TRADE ON ODIN.FUN →</a>
+</div>
 
-pygame.init()
-WIDTH, HEIGHT = 1000, 600
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("RIFFAN.IO - 1923 EDITION")
-clock = pygame.time.Clock()
+<div class="metrics">
+<div class="card"><div>PRICE (USD)</div><h2 id="riffan-price">$0.00017</h2><div class="live">LIVE on ODIN.FUN</div></div>
+<div class="card"><div>PRICE (SATS)</div><h2>0.2 sats</h2><div>≈ $0.00017 USD</div></div>
+<div class="card"><div>ASCENDED PROGRESS</div><h2>14%</h2><div style="background:#222;height:8px;border-radius:5px"><div style="width:14%;height:8px;background:linear-gradient(90deg,#00f0ff,#d4af37)"></div></div></div>
+</div>
 
-# ألوان الريف
-BLACK = (10, 10, 10)
-GOLD = (212, 175, 55)
-RIF_RED = (180, 20, 20)
-WHITE = (255, 255, 255)
-AMAZIGH_BLUE = (0, 80, 160)
+<h2 style="text-align:center;color:#d4af37">TOP 10 CRYPTO - LIVE MARKET</h2>
+<table id="top10">
+<tr><th>#</th><th>TOKEN</th><th>PRICE</th><th>24H CHANGE</th><th>MARKET CAP</th></tr>
+</table>
 
-font_big = pygame.font.SysFont('Arial', 48, bold=True)
-font_small = pygame.font.SysFont('Arial', 24, bold=True)
-
-# متغيرات العملة - هنا فين كتربط مشروعك
-TOKEN_NAME = "$RIFFAN"
-TOKEN_SUPPLY = 1923000000 # 1923 تاريخ الجمهورية
-coins_collected = 0
-
-class RiffanCoin:
-    def __init__(self):
-        self.x = random.randint(WIDTH, WIDTH+500)
-        self.y = random.randint(100, HEIGHT-100)
-        self.size = 40
-        self.speed = 4
-        self.angle = 0
-
-    def update(self):
-        self.x -= self.speed
-        self.angle += 5
-        if self.x < -50:
-            self.x = WIDTH + random.randint(0, 300)
-            self.y = random.randint(100, HEIGHT-100)
-
-    def draw(self):
-        # رسم العملة ديالك الكحلة مع ₿ و ⵣ
-        center = (int(self.x), int(self.y))
-        # دائرة كحلة
-        pygame.draw.circle(screen, BLACK, center, self.size)
-        # حاشية ذهبية
-        pygame.draw.circle(screen, GOLD, center, self.size, 4)
-        # رمز البيتكوين
-        btc = font_small.render("₿", True, GOLD)
-        screen.blit(btc, (self.x-10, self.y-20))
-        # رمز أمازيغي
-        yaz = font_small.render("ⵣ", True, GOLD)
-        screen.blit(yaz, (self.x-10, self.y+5))
-        # تأثير لمعان
-        shine = int(5 * math.sin(math.radians(self.angle)))
-        pygame.draw.circle(screen, (255,255,255,100), (center[0]-8, center[1]-8), 6)
-
-class Rider:
-    def __init__(self):
-        self.x = 150
-        self.y = HEIGHT//2
-        self.vy = 0
-
-    def update(self):
-        keys = pygame.key.get_pressed()
-        if keys[pygame.K_SPACE] or keys[pygame.K_UP]:
-            self.vy = -6
-        self.vy += 0.35
-        self.y += self.vy
-        self.y = max(50, min(HEIGHT-80, self.y))
-
-    def draw(self):
-        # الفارس الريفي مبسط - تقدر تبدلو بصورة الحصان ديالك من بعد
-        pygame.draw.circle(screen, GOLD, (int(self.x), int(self.y)), 25)
-        pygame.draw.rect(screen, RIF_RED, (self.x-15, self.y+20, 30, 20))
-        # حصان
-        pygame.draw.ellipse(screen, WHITE, (self.x-30, self.y+10, 60, 20))
-
-rider = Rider()
-coins = [RiffanCoin() for _ in range(5)]
-
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-    # خلفية
-    screen.fill((15, 25, 35))
-    # نجوم
-    for i in range(50):
-        pygame.draw.circle(screen, WHITE, (random.randint(0,WIDTH), random.randint(0,100)), 1)
-
-    rider.update()
-
-    for coin in coins:
-        coin.update()
-        coin.draw()
-        # تصادم
-        dist = math.hypot(rider.x - coin.x, rider.y - coin.y)
-        if dist < 45:
-            coins_collected += 1
-            coin.x = WIDTH + 200
-            # هنا فين تربط بالبلوكشين من بعد
-            print(f"Collected {coins_collected} {TOKEN_NAME}!")
-
-    rider.draw()
-
-    # HUD
-    title = font_big.render("RIFFAN.IO", True, GOLD)
-    screen.blit(title, (20, 10))
-    sub = font_small.render(f"REPUBLIC OF RIF - 1921", True, RIF_RED)
-    screen.blit(sub, (20, 65))
-
-    score_text = font_small.render(f"{TOKEN_NAME}: {coins_collected} / {TOKEN_SUPPLY}", True, WHITE)
-    screen.blit(score_text, (WIDTH-350, 20))
-
-    link = font_small.render("riffan.io - Buy on Dex", True, AMAZIGH_BLUE)
-    screen.blit(link, (WIDTH-350, 50))
-
-    pygame.display.flip()
-    clock.tick(60)
-
-pygame.quit()
-sys.exit()
+<script>
+// يجيب Top 10 الحقيقي من CoinGecko
+async function loadTop10(){
+  try{
+    const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=9&price_change_percentage=24h');
+    const data = await res.json();
+    let html = `<tr><th>#</th><th>TOKEN</th><th>PRICE</th><th>24H CHANGE</th><th>MARKET CAP</th></tr>`;
+    // زيد RIFFAN فالوسط كرقم 3
+    html += `<tr style="background:#d4af3733;border:2px solid #d4af37"><td>3</td><td><b>RIFFAN</b> ⭐ NEW</td><td id="riffan-row">$0.00017</td><td style="color:#00ff88">+30.72%</td><td>ASCENDING</td></tr>`;
+    data.forEach((c,i)=>{
+      let rank = i>=2 ? i+2 : i+1;
+      html += `<tr><td>${rank}</td><td><img src="${c.image}" width="20"> ${c.name} (${c.symbol.toUpperCase()})</td><td>$${c.current_price}</td><td style="color:${c.price_change_percentage_24h>0?'#00ff88':'#ff4444'}">${c.price_change_percentage_24h?.toFixed(2)}%</td><td>$${(c.market_cap/1e9).toFixed(2)}B</td></tr>`;
+    });
+    document.getElementById('top10').innerHTML = html;
+  }catch(e){ console.log(e); }
+}
+loadTop10();
+setInterval(loadTop10, 30000); // كل 30 ثانية يتحدث
+</script>
+</body>
+</html>
